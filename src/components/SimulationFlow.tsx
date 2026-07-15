@@ -24,6 +24,7 @@ export default function SimulationFlow() {
   const [referralCount, setReferralCount] = useState(0);
   const [copied, setCopied] = useState(false);
   const [shared, setShared] = useState(false);
+  const [expandedMetric, setExpandedMetric] = useState<string | null>(null);
 
   // Capture referral code on mount
   useEffect(() => {
@@ -219,11 +220,11 @@ export default function SimulationFlow() {
                 <div className="space-y-2">
                   <div className="flex justify-between items-center text-xs font-mono text-slate-300">
                     <span>Question {currentQuestionIndex + 1} of {QUESTIONS.length}</span>
-                    <span>{Math.round(((currentQuestionIndex + 1) / QUESTIONS.length) * 100)}% Complete</span>
+                    <span className="text-cyan-400 font-bold">{Math.round(((currentQuestionIndex + 1) / QUESTIONS.length) * 100)}% Complete</span>
                   </div>
-                  <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div className="w-full h-3 bg-slate-950 border border-slate-700/60 rounded-full overflow-hidden p-[2.5px] shadow-[inset_0_2px_4px_rgba(0,0,0,0.6)]">
                     <div 
-                      className="h-full bg-cyanaccent transition-all duration-300 shadow-[0_0_8px_rgba(6,182,212,0.6)]"
+                      className="h-full bg-gradient-to-r from-cyan-500 to-cyanaccent transition-all duration-300 rounded-full shadow-[0_0_12px_rgba(6,182,212,0.85)]"
                       style={{ width: `${((currentQuestionIndex + 1) / QUESTIONS.length) * 100}%` }}
                     />
                   </div>
@@ -396,76 +397,211 @@ export default function SimulationFlow() {
                     </span>
                   </div>
 
-                  {/* Right block: Metrics */}
-                  <div className="md:col-span-7 space-y-3 relative z-10">
-                    <h4 className="font-serif text-sm font-black tracking-[0.1em] text-white mb-2 uppercase drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">Metrics Breakdown</h4>
+                  {/* Right block: Metrics with Interactive Accordions */}
+                  <div className="md:col-span-7 space-y-3.5 relative z-10">
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="font-serif text-sm font-black tracking-[0.1em] text-white uppercase drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">Metrics Breakdown</h4>
+                      <span className="text-[10px] font-mono text-cyanaccent font-bold animate-pulse">Click any metric to expand</span>
+                    </div>
                     
                     {/* Fatigue card */}
-                    <div className="flex items-center justify-between p-3.5 backdrop-blur-xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-[#20314d] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.55)] transition-all hover:border-cyanaccent/50 hover:bg-white/[0.1]">
-                      <div className="flex items-center gap-3">
-                        <div className="p-1.5 bg-cyanaccent/20 text-cyanaccent rounded-lg border border-cyanaccent/35 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
-                          <Zap className="h-4.5 w-4.5" />
+                    <div 
+                      className={`backdrop-blur-xl rounded-xl border transition-all overflow-hidden shadow-[0_8px_32px_0_rgba(2,10,25,0.55)] ${
+                        expandedMetric === "fatigue" 
+                          ? "border-cyanaccent bg-white/[0.08]" 
+                          : "border-[#20314d] bg-gradient-to-br from-white/[0.06] to-white/[0.02] hover:border-cyanaccent/50 hover:bg-white/[0.08]"
+                      }`}
+                    >
+                      <button 
+                        onClick={() => setExpandedMetric(prev => prev === "fatigue" ? null : "fatigue")}
+                        className="w-full flex items-center justify-between p-3.5 text-left focus:outline-none focus:ring-1 focus:ring-cyanaccent/30 cursor-pointer"
+                        aria-expanded={expandedMetric === "fatigue"}
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="p-1.5 bg-cyanaccent/20 text-cyanaccent rounded-lg border border-cyanaccent/35 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+                            <Zap className="h-4.5 w-4.5" />
+                          </div>
+                          <div className="flex flex-col text-left">
+                            <span className="text-[13px] font-extrabold text-white font-sans tracking-wide leading-tight">FATIGUE RISK</span>
+                            <span className="text-[11px] text-slate-200 font-sans font-semibold leading-normal mt-0.5">Physical & mental fatigue index</span>
+                          </div>
                         </div>
-                        <div className="flex flex-col text-left">
-                          <span className="text-[13px] font-extrabold text-white font-sans tracking-wide leading-tight">FATIGUE RISK</span>
-                          <span className="text-[11px] text-slate-200 font-sans font-semibold leading-normal mt-0.5">Physical & mental fatigue index</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-[10.5px] font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-2.5 py-0.5 rounded-full font-mono shadow-[0_0_8px_rgba(16,185,129,0.25)]">Low</span>
+                          <ChevronDown className={`h-4 w-4 text-slate-300 transition-transform duration-300 ${expandedMetric === "fatigue" ? "rotate-180" : ""}`} />
                         </div>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <span className="text-[10.5px] font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-2.5 py-0.5 rounded-full font-mono shadow-[0_0_8px_rgba(16,185,129,0.25)]">Low</span>
-                        <ChevronDown className="h-4 w-4 text-slate-300" />
-                      </div>
+                      </button>
+
+                      <AnimatePresence>
+                        {expandedMetric === "fatigue" && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.25, ease: "easeInOut" }}
+                            className="overflow-hidden"
+                          >
+                            <div className="px-3.5 pb-4 pt-1 border-t border-white/[0.06] text-xs leading-relaxed font-sans text-slate-300 space-y-2 bg-[#060c17]/40">
+                              <p>
+                                Your answers indicate proactive sleep habits, optimized route planning, and structured rest breaks. Fatigue risk is calculated at a nominal low index.
+                              </p>
+                              <div className="p-2 bg-emerald-500/10 border border-emerald-500/20 rounded-lg text-emerald-300 font-medium">
+                                <strong className="text-white">Canadian Driver Tip:</strong> Even with low simulated fatigue, the monotony of long corridors like Highway 401, the Coquihalla, or the Trans-Canada Highway requires a mental buffer break every 2 hours or 200 km.
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
 
                     {/* Attention card */}
-                    <div className="flex items-center justify-between p-3.5 backdrop-blur-xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-[#20314d] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.55)] transition-all hover:border-cyanaccent/50 hover:bg-white/[0.1]">
-                      <div className="flex items-center gap-3">
-                        <div className="p-1.5 bg-cyanaccent/20 text-cyanaccent rounded-lg border border-cyanaccent/35 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
-                          <Eye className="h-4.5 w-4.5" />
+                    <div 
+                      className={`backdrop-blur-xl rounded-xl border transition-all overflow-hidden shadow-[0_8px_32px_0_rgba(2,10,25,0.55)] ${
+                        expandedMetric === "attention" 
+                          ? "border-cyanaccent bg-white/[0.08]" 
+                          : "border-[#20314d] bg-gradient-to-br from-white/[0.06] to-white/[0.02] hover:border-cyanaccent/50 hover:bg-white/[0.08]"
+                      }`}
+                    >
+                      <button 
+                        onClick={() => setExpandedMetric(prev => prev === "attention" ? null : "attention")}
+                        className="w-full flex items-center justify-between p-3.5 text-left focus:outline-none focus:ring-1 focus:ring-cyanaccent/30 cursor-pointer"
+                        aria-expanded={expandedMetric === "attention"}
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="p-1.5 bg-cyanaccent/20 text-cyanaccent rounded-lg border border-cyanaccent/35 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+                            <Eye className="h-4.5 w-4.5" />
+                          </div>
+                          <div className="flex flex-col text-left">
+                            <span className="text-[13px] font-extrabold text-white font-sans tracking-wide leading-tight">ATTENTION STABILITY</span>
+                            <span className="text-[11px] text-slate-200 font-sans font-semibold leading-normal mt-0.5">Focus persistence scale</span>
+                          </div>
                         </div>
-                        <div className="flex flex-col text-left">
-                          <span className="text-[13px] font-extrabold text-white font-sans tracking-wide leading-tight">ATTENTION STABILITY</span>
-                          <span className="text-[11px] text-slate-200 font-sans font-semibold leading-normal mt-0.5">Focus persistence scale</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-[10.5px] font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-2.5 py-0.5 rounded-full font-mono shadow-[0_0_8px_rgba(16,185,129,0.25)]">Good</span>
+                          <ChevronDown className={`h-4 w-4 text-slate-300 transition-transform duration-300 ${expandedMetric === "attention" ? "rotate-180" : ""}`} />
                         </div>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <span className="text-[10.5px] font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-2.5 py-0.5 rounded-full font-mono shadow-[0_0_8px_rgba(16,185,129,0.25)]">Good</span>
-                        <ChevronDown className="h-4 w-4 text-slate-300" />
-                      </div>
+                      </button>
+
+                      <AnimatePresence>
+                        {expandedMetric === "attention" && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.25, ease: "easeInOut" }}
+                            className="overflow-hidden"
+                          >
+                            <div className="px-3.5 pb-4 pt-1 border-t border-white/[0.06] text-xs leading-relaxed font-sans text-slate-300 space-y-2 bg-[#060c17]/40">
+                              <p>
+                                Your attention stability metrics indicate stable reaction reserves and low reliance on aggressive coping triggers (such as speeding) to stimulate focus.
+                              </p>
+                              <div className="p-2 bg-emerald-500/10 border border-emerald-500/20 rounded-lg text-emerald-300 font-medium">
+                                <strong className="text-white">Focus Tip:</strong> Keep cabin temperatures cool (between 19°C and 21°C) and stream high-tempo, non-lyrical music to maintain cognitive baseline flow without cognitive overload.
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
 
                     {/* Cognitive Load card */}
-                    <div className="flex items-center justify-between p-3.5 backdrop-blur-xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-[#20314d] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.55)] transition-all hover:border-cyanaccent/50 hover:bg-white/[0.1]">
-                      <div className="flex items-center gap-3">
-                        <div className="p-1.5 bg-amber-500/20 text-amberaccent rounded-lg border border-amberaccent/35 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
-                          <Brain className="h-4.5 w-4.5" />
+                    <div 
+                      className={`backdrop-blur-xl rounded-xl border transition-all overflow-hidden shadow-[0_8px_32px_0_rgba(2,10,25,0.55)] ${
+                        expandedMetric === "cognitive" 
+                          ? "border-cyanaccent bg-white/[0.08]" 
+                          : "border-[#20314d] bg-gradient-to-br from-white/[0.06] to-white/[0.02] hover:border-cyanaccent/50 hover:bg-white/[0.08]"
+                      }`}
+                    >
+                      <button 
+                        onClick={() => setExpandedMetric(prev => prev === "cognitive" ? null : "cognitive")}
+                        className="w-full flex items-center justify-between p-3.5 text-left focus:outline-none focus:ring-1 focus:ring-cyanaccent/30 cursor-pointer"
+                        aria-expanded={expandedMetric === "cognitive"}
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="p-1.5 bg-amber-500/20 text-amberaccent rounded-lg border border-amberaccent/35 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+                            <Brain className="h-4.5 w-4.5" />
+                          </div>
+                          <div className="flex flex-col text-left">
+                            <span className="text-[13px] font-extrabold text-white font-sans tracking-wide leading-tight">COGNITIVE LOAD</span>
+                            <span className="text-[11px] text-slate-200 font-sans font-semibold leading-normal mt-0.5">Heuristic task stress load</span>
+                          </div>
                         </div>
-                        <div className="flex flex-col text-left">
-                          <span className="text-[13px] font-extrabold text-white font-sans tracking-wide leading-tight">COGNITIVE LOAD</span>
-                          <span className="text-[11px] text-slate-200 font-sans font-semibold leading-normal mt-0.5">Heuristic task stress load</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-[10.5px] font-bold text-amber-300 bg-amber-500/20 border border-amberaccent/40 px-2.5 py-0.5 rounded-full font-mono shadow-[0_0_8px_rgba(184,134,11,0.25)]">Moderate</span>
+                          <ChevronDown className={`h-4 w-4 text-slate-300 transition-transform duration-300 ${expandedMetric === "cognitive" ? "rotate-180" : ""}`} />
                         </div>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <span className="text-[10.5px] font-bold text-amber-300 bg-amber-500/20 border border-amberaccent/40 px-2.5 py-0.5 rounded-full font-mono shadow-[0_0_8px_rgba(184,134,11,0.25)]">Moderate</span>
-                        <ChevronDown className="h-4 w-4 text-slate-300" />
-                      </div>
+                      </button>
+
+                      <AnimatePresence>
+                        {expandedMetric === "cognitive" && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.25, ease: "easeInOut" }}
+                            className="overflow-hidden"
+                          >
+                            <div className="px-3.5 pb-4 pt-1 border-t border-white/[0.06] text-xs leading-relaxed font-sans text-slate-300 space-y-2 bg-[#060c17]/40">
+                              <p>
+                                Actively managing challenging traffic, complex routes, or hazardous weather conditions (such as lake-effect snow or mountain passes) keeps your cognitive system engaged but at a safe moderate load limit.
+                              </p>
+                              <div className="p-2 bg-amber-500/10 border border-amber-500/20 rounded-lg text-amber-300 font-medium">
+                                <strong className="text-white">Safety Advice:</strong> Minimize interactive secondary tasks (such as dialing phone menus or adjusting touchscreen dashboards) during complex navigation. Prepare navigation playlists and addresses completely before departure.
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
 
                     {/* Environmental card */}
-                    <div className="flex items-center justify-between p-3.5 backdrop-blur-xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-[#20314d] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.55)] transition-all hover:border-cyanaccent/50 hover:bg-white/[0.1]">
-                      <div className="flex items-center gap-3">
-                        <div className="p-1.5 bg-cyanaccent/20 text-cyanaccent rounded-lg border border-cyanaccent/35 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
-                          <Activity className="h-4.5 w-4.5" />
+                    <div 
+                      className={`backdrop-blur-xl rounded-xl border transition-all overflow-hidden shadow-[0_8px_32px_0_rgba(2,10,25,0.55)] ${
+                        expandedMetric === "environmental" 
+                          ? "border-cyanaccent bg-white/[0.08]" 
+                          : "border-[#20314d] bg-gradient-to-br from-white/[0.06] to-white/[0.02] hover:border-cyanaccent/50 hover:bg-white/[0.08]"
+                      }`}
+                    >
+                      <button 
+                        onClick={() => setExpandedMetric(prev => prev === "environmental" ? null : "environmental")}
+                        className="w-full flex items-center justify-between p-3.5 text-left focus:outline-none focus:ring-1 focus:ring-cyanaccent/30 cursor-pointer"
+                        aria-expanded={expandedMetric === "environmental"}
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="p-1.5 bg-cyanaccent/20 text-cyanaccent rounded-lg border border-cyanaccent/35 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+                            <Activity className="h-4.5 w-4.5" />
+                          </div>
+                          <div className="flex flex-col text-left">
+                            <span className="text-[13px] font-extrabold text-white font-sans tracking-wide leading-tight">ENVIRONMENTAL FACTOR</span>
+                            <span className="text-[11px] text-slate-200 font-sans font-semibold leading-normal mt-0.5">Contextual difficulty multiplier</span>
+                          </div>
                         </div>
-                        <div className="flex flex-col text-left">
-                          <span className="text-[13px] font-extrabold text-white font-sans tracking-wide leading-tight">ENVIRONMENTAL FACTOR</span>
-                          <span className="text-[11px] text-slate-200 font-sans font-semibold leading-normal mt-0.5">Contextual difficulty multiplier</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-[10.5px] font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-2.5 py-0.5 rounded-full font-mono shadow-[0_0_8px_rgba(16,185,129,0.25)]">Low</span>
+                          <ChevronDown className={`h-4 w-4 text-slate-300 transition-transform duration-300 ${expandedMetric === "environmental" ? "rotate-180" : ""}`} />
                         </div>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <span className="text-[10.5px] font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-2.5 py-0.5 rounded-full font-mono shadow-[0_0_8px_rgba(16,185,129,0.25)]">Low</span>
-                        <ChevronDown className="h-4 w-4 text-slate-300" />
-                      </div>
+                      </button>
+
+                      <AnimatePresence>
+                        {expandedMetric === "environmental" && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.25, ease: "easeInOut" }}
+                            className="overflow-hidden"
+                          >
+                            <div className="px-3.5 pb-4 pt-1 border-t border-white/[0.06] text-xs leading-relaxed font-sans text-slate-300 space-y-2 bg-[#060c17]/40">
+                              <p>
+                                Your timing, speed management, and choice of regional environment show a lower exposure to high-friction gridlock, which significantly limits stress fatigue.
+                              </p>
+                              <div className="p-2 bg-emerald-500/10 border border-emerald-500/20 rounded-lg text-emerald-300 font-medium">
+                                <strong className="text-white">Canadian Context:</strong> Avoiding dense rush hour queues in urban hubs like Toronto, Montreal, Calgary, or Vancouver prevents micro-fatigue buildup and extends safe driving longevity.
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
 
                   </div>

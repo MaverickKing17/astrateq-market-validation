@@ -215,7 +215,7 @@ export default function InfoSections({ onStartSimulation }: InfoSectionsProps) {
           {/* Card 1 */}
           <div className="bg-gradient-to-br from-[#0B1526] to-[#12233F] border border-[#20314d] hover:border-cyanaccent/50 rounded-3xl p-8 hover:shadow-lg transition-all flex flex-col justify-between" id="val-card-1">
             <div>
-              <div className="h-1.5 w-16 bg-cyan-400 rounded-full mb-6" />
+              <div className="h-3 w-24 bg-gradient-to-r from-cyan-500 to-cyan-300 rounded-full mb-6 shadow-[0_0_8px_rgba(6,182,212,0.4)]" />
               <h3 className="font-serif text-lg md:text-xl text-white font-black tracking-tight mb-3">
                 Can awareness patterns be estimated without in-vehicle monitoring?
               </h3>
@@ -229,7 +229,7 @@ export default function InfoSections({ onStartSimulation }: InfoSectionsProps) {
           {/* Card 2 */}
           <div className="bg-gradient-to-br from-[#0B1526] to-[#12233F] border border-[#20314d] hover:border-amberaccent/50 rounded-3xl p-8 hover:shadow-lg transition-all flex flex-col justify-between" id="val-card-2">
             <div>
-              <div className="h-1.5 w-16 bg-amber-400 rounded-full mb-6" />
+              <div className="h-3 w-24 bg-gradient-to-r from-amber-500 to-amber-300 rounded-full mb-6 shadow-[0_0_8px_rgba(245,158,11,0.4)]" />
               <h3 className="font-serif text-lg md:text-xl text-white font-black tracking-tight mb-3">
                 Can driving context influence perceived alertness?
               </h3>
@@ -243,7 +243,7 @@ export default function InfoSections({ onStartSimulation }: InfoSectionsProps) {
           {/* Card 3 */}
           <div className="bg-gradient-to-br from-[#0B1526] to-[#12233F] border border-[#20314d] hover:border-cyanaccent/50 rounded-3xl p-8 hover:shadow-lg transition-all flex flex-col justify-between" id="val-card-3">
             <div>
-              <div className="h-1.5 w-16 bg-cyan-400 rounded-full mb-6" />
+              <div className="h-3 w-24 bg-gradient-to-r from-cyan-500 to-cyan-300 rounded-full mb-6 shadow-[0_0_8px_rgba(6,182,212,0.4)]" />
               <h3 className="font-serif text-lg md:text-xl text-white font-black tracking-tight mb-3">
                 Can privacy-first models provide meaningful insights?
               </h3>
@@ -284,8 +284,8 @@ export default function InfoSections({ onStartSimulation }: InfoSectionsProps) {
               </div>
 
               {/* Progress Bar */}
-              <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden mb-6">
-                <div className="w-3/5 h-full bg-cyan-400 rounded-full" />
+              <div className="w-full h-3 bg-slate-950 border border-slate-700/60 rounded-full overflow-hidden mb-6 p-[2.5px] shadow-[inset_0_2px_4px_rgba(0,0,0,0.6)]">
+                <div className="w-3/5 h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full shadow-[0_0_10px_rgba(6,182,212,0.85)]" />
               </div>
 
               {/* Question Statement */}
