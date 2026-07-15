@@ -146,23 +146,63 @@ export const APPROACHES = [
 
 export const FAQS = [
   {
+    category: "Scope & Intent",
     question: "What is Astrateq Gadgets?",
-    answer: "Astrateq Gadgets is a Canadian technology exploration initiative. We are conducting pre-launch market validation to explore whether drivers want a privacy-first, edge-powered 'Driver Awareness Intelligence' software solution."
+    answer: "Astrateq Gadgets is an independent Canadian research and technology validation initiative. We are conducting pre-launch market validation to explore the viability of an offline-first, edge-computing driver awareness assistant. Rather than launching a commercial product, our immediate goal is to validate motorist trust, safety demand, and technical feasibility before investing in physical hardware or custom software development."
   },
   {
+    category: "Methodology",
     question: "How does the simulated scoring model work?",
-    answer: "For this validation and research study, all profile outputs and scores are simulated based on a conceptual behavioral model of your driving patterns. There is no active sensor, hardware connection, or real-time camera tracking. The results demonstrate the style of output a fully implemented software module could provide."
+    answer: "During this early validation stage, our 5-question evaluation calculates an alertness and fatigue resilience score based on statistical risk factors—such as diurnal fatigue windows, commute duration stress, environmental visibility variables, and proactive rest responses. This output is processed fully in your browser memory as an educational demonstration of the metrics an active, edge-based software framework would prioritize."
   },
   {
-    question: "Is my driving data tracked, stored, or shared?",
-    answer: "No. The simulation runs entirely on your device. We do not track, collect, or store real-time driving telemetry, GPS locations, speed logs, or vehicle identifiers. We have absolutely no links to auto insurers, government registries, or advertising networks."
+    category: "Privacy & Security",
+    question: "Is my driving behavior actively tracked or monitored by this site?",
+    answer: "No. This website acts as a static, text-based interactive questionnaire. We do not access your device's camera, GPS sensor, accelerometer, or internal vehicle telemetry. Your inputs are kept completely confidential, processed purely client-side, and are never shared with advertising networks, third-party trackers, or central databases."
   },
   {
-    question: "Is there any cost to participate?",
-    answer: "None. This is a purely academic and industry concept-validation study. There are no payments, reservations, deposits, or hidden charges. The live simulation and Research Cohort are completely free of charge."
+    category: "Scope & Intent",
+    question: "Who is conducting this research study?",
+    answer: "The project is spearheaded by a dedicated team of independent Canadian technology researchers and software engineers. We are passionate about building decentralized, privacy-focused alternatives to commercial cabin surveillance and corporate monitoring systems. Our research objectives and operations are based entirely within Canada."
   },
   {
-    question: "Is special hardware required?",
-    answer: "No. The Astrateq Gadgets concept is engineered as a software-only approach designed to run on existing modern consumer smartphones. No hardware or custom vehicle modifications are designed or committed."
+    category: "Privacy & Security",
+    question: "How does edge computing protect driver privacy?",
+    answer: "Traditional driver safety systems upload massive, continuous streams of raw video or biometric telemetry to centralized cloud servers, exposing drivers to security breaches. Under a sovereign edge model, all cognitive and facial fatigue heuristic calculations are processed in isolated memory partitions directly on your smartphone. Only localized status signals are calculated, and raw biometric data never leaves the device."
+  },
+  {
+    category: "Data Sharing",
+    question: "Will my results be shared with auto insurance providers?",
+    answer: "Absolutely not. Our research model is fundamentally decoupled from commercial insurance frameworks, corporate telemetry programs, and government licensing registries. We believe motorists should have absolute, uncompromised ownership of their attention statistics. No insurance sync, sharing, or reporting is designed or possible."
+  },
+  {
+    category: "Participation",
+    question: "Is there any cost, deposit, or obligation associated with participation?",
+    answer: "No. Participation in our simulation and registration in the active research cohort is 100% free. There are no sales pitches, credit card requirements, pre-launch deposits, or hidden commercial upgrades. This is an exploratory, non-commercial concept-validation study."
+  },
+  {
+    category: "Participation",
+    question: "What is the Active Research Cohort, and what does registration involve?",
+    answer: "The Active Research Cohort is a registry of forward-thinking Canadian motorists who wish to participate in upcoming phases of our study. Registered participants will receive aggregated cohort statistics (fully anonymized), quarterly research summaries, and priority invitations to test early, non-commercial software prototypes when they enter the field evaluation phase."
+  },
+  {
+    category: "Technical & Hardware",
+    question: "How does Astrateq’s concept compare to standard dashboard cameras?",
+    answer: "Traditional dashcams record raw, high-resolution video footage of the driver and external environment. Astrateq's software-first concept focuses on evaluating cognitive fatigue indicators via localized mathematical models, avoiding raw video recordings, cloud streaming, and potential third-party data exposures entirely."
+  },
+  {
+    category: "Technical & Hardware",
+    question: "Does this system require connection to my vehicle’s OBD-II port?",
+    answer: "No. Our edge computing model is designed to work completely independently of your vehicle's physical computer. It operates as an isolated smartphone framework, bypassing the need for OBD-II readers, physical wiring harnesses, or custom in-car integration."
+  },
+  {
+    category: "Canadian Realities",
+    question: "How do regional Canadian factors affect driver attention fatigue?",
+    answer: "Commuting in Canada presents distinct stress factors: rapid winter daylight shifts (with sunsets before 4:30 PM), freezing rain, whiteout conditions, and heavy highway bottlenecks on corridors like the GTA or Lower Mainland. Our research maps these provincial variables directly to cognitive stress curves."
+  },
+  {
+    category: "Methodology",
+    question: "What are the next steps in the validation roadmap?",
+    answer: "We are currently in Phase 1 (Concept Validation). If our validation metrics demonstrate significant motorist interest and meet statistical thresholds, Phase 2 will focus on Simulation Analytics, and Phase 3 will investigate edge-computing mobile performance. All milestone reports will be shared transparently with our registered cohort."
   }
 ];

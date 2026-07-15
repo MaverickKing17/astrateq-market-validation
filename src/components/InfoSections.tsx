@@ -140,67 +140,23 @@ export default function InfoSections() {
         </div>
       </section>
 
-      {/* ---------------- SECTION 4: How it works ---------------- */}
+      {/* ---------------- SECTION 4: How it works (Stateful Interactive Research Explorer) ---------------- */}
       <section className="max-w-7xl mx-auto px-6 border-t border-deepnavy/10 pt-24" id="how-it-works">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="font-mono text-xs text-cyanaccent uppercase tracking-widest font-bold">
-            Timeline
+          <span className="font-mono text-xs text-cyanaccent uppercase tracking-widest font-black block mb-2" id="how-tag">
+            Validation Workflow
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl text-deepnavy font-bold mt-2 tracking-tight">
-            How it works
+          <h2 className="font-serif text-3xl md:text-5xl text-deepnavy font-black tracking-tight" id="how-heading">
+            How It Works
           </h2>
-          <p className="text-deepnavy/70 mt-3 font-sans">
-            Our exploratory simulation process is entirely streamlined, taking only 60 seconds of focused input:
+          <p className="text-base text-deepnavy/70 mt-4 leading-relaxed font-sans max-w-2xl mx-auto">
+            Our market-validation process is fully streamlined, transparent, and user-directed. Explore each phase of our research simulation framework below:
           </p>
         </div>
 
-        <div className="relative grid grid-cols-1 md:grid-cols-4 gap-12" id="how-it-works-flow">
-          {/* Connector line for large screens */}
-          <div className="hidden md:block absolute top-[44px] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-cyanaccent/20 via-amberaccent/20 to-cyanaccent/20 -z-10" />
-
-          {/* Step 1 */}
-          <div className="flex flex-col items-center text-center space-y-4" id="work-step-1">
-            <div className="h-12 w-12 rounded-full bg-cyanaccent text-white flex items-center justify-center font-bold text-lg shadow-md">
-              1
-            </div>
-            <h3 className="font-serif text-base text-deepnavy font-bold">Answer Questions</h3>
-            <p className="text-xs text-deepnavy/70 max-w-xs font-sans">
-              Input driving behavior, context, and focus indicators through five targeted research questions.
-            </p>
-          </div>
-
-          {/* Step 2 */}
-          <div className="flex flex-col items-center text-center space-y-4" id="work-step-2">
-            <div className="h-12 w-12 rounded-full bg-deepnavy text-white flex items-center justify-center font-bold text-lg shadow-md">
-              2
-            </div>
-            <h3 className="font-serif text-base text-deepnavy font-bold">Generate Profile</h3>
-            <p className="text-xs text-deepnavy/70 max-w-xs font-sans">
-              The on-screen diagnostic script translates parameters into a simulated driver profile.
-            </p>
-          </div>
-
-          {/* Step 3 */}
-          <div className="flex flex-col items-center text-center space-y-4" id="work-step-3">
-            <div className="h-12 w-12 rounded-full bg-cyanaccent text-white flex items-center justify-center font-bold text-lg shadow-md">
-              3
-            </div>
-            <h3 className="font-serif text-base text-deepnavy font-bold">See Results Report</h3>
-            <p className="text-xs text-deepnavy/70 max-w-xs font-sans">
-              Review your customized score, Fatigue Risk analysis, and potential mitigation priorities instantly.
-            </p>
-          </div>
-
-          {/* Step 4 */}
-          <div className="flex flex-col items-center text-center space-y-4" id="work-step-4">
-            <div className="h-12 w-12 rounded-full bg-deepnavy text-white flex items-center justify-center font-bold text-lg shadow-md">
-              4
-            </div>
-            <h3 className="font-serif text-base text-deepnavy font-bold">Optionally Join Cohort</h3>
-            <p className="text-xs text-deepnavy/70 max-w-xs font-sans">
-              Submit your interest to join the National Research Cohort and shape upcoming software pilots.
-            </p>
-          </div>
+        {/* Stateful Step Selector Tabs */}
+        <div className="bg-white rounded-3xl border border-deepnavy/10 p-6 md:p-8 shadow-sm" id="interactive-workflow-hub">
+          <WorkflowExplorer />
         </div>
       </section>
 
@@ -429,6 +385,186 @@ export default function InfoSections() {
         </div>
       </section>
 
+    </div>
+  );
+}
+
+// Stateful Interactive Step Explorer
+function WorkflowExplorer() {
+  const [activeStep, setActiveStep] = React.useState(0);
+
+  const steps = [
+    {
+      label: "Phase 1: Cognitive Intake",
+      shortTitle: "Answer Questions",
+      icon: "📋",
+      tagline: "Voluntary self-reported attention metrics",
+      overview: "Enter voluntary subjective and contextual variables—including commute patterns, sleep hygiene, driving durations, and attention coping mechanisms—via our 5-question secure diagnostic sandbox form.",
+      scientificGoal: "Subjective fatigue indicators correlate strongly with physiological drowsiness levels. By collecting systematic self-reports, we validate whether pre-commute profiling can predict cognitive drift before you start the ignition.",
+      technicalDetails: [
+        "100% Client-side sandbox browser execution",
+        "Zero API calls or transmission of answers during input",
+        "Decoupled from device camera and external telemetry"
+      ],
+      metricLabel: "DIAGNOSTIC INSTRUMENT: COG_INTAKE_V1"
+    },
+    {
+      label: "Phase 2: Contextual Heuristics",
+      shortTitle: "Generate Profile",
+      icon: "⚙️",
+      tagline: "Processing localized stress vectors",
+      overview: "Our local mathematical script immediately processes your answers against regional Canadian driving hazards to construct a temporal attention stress curve.",
+      scientificGoal: "Driving context heavily impacts alertness. By combining your inputs with regional Canadian commuter bottleneck multipliers and seasonal daylight curves, the algorithm calculates custom, realistic fatigue risks.",
+      technicalDetails: [
+        "Instant math heuristic processing on-device",
+        "Adaptive temporal stress multipliers for rural vs metropolitan routes",
+        "Decoupled from vehicle OBD-II computers or central processing nodes"
+      ],
+      metricLabel: "ALGORITHM METRIC: TEMPORAL_STRESS_CURVE_V4"
+    },
+    {
+      label: "Phase 3: Instant Analytics",
+      shortTitle: "See Results Report",
+      icon: "📊",
+      tagline: "Comprehensive attention diagnostics",
+      overview: "Instantly view your simulated Driver Awareness Score, along with detailed fatigue mitigation breakdowns and province-specific risk profiles—completely free of charge.",
+      scientificGoal: "Showing actionable results helps drivers build localized awareness of their sleep schedules, commute timing, and attention patterns. No email wall, credit cards, or hidden commercial upgrades are required.",
+      technicalDetails: [
+        "Interactive high-contrast telemetry HUD mock",
+        "Comprehensive localized risk assessment metrics",
+        "Saves score safely in your browser local storage"
+      ],
+      metricLabel: "FINDINGS COEFFICIENT: AWARENESS_INDEX_81"
+    },
+    {
+      label: "Phase 4: Academic Cohort",
+      shortTitle: "Join Active Cohort",
+      icon: "🤝",
+      tagline: "Register as research partner",
+      overview: "Motorists can optionally submit their email to join the National Research Cohort to receive aggregated cohort findings and priority pilot opportunities.",
+      scientificGoal: "Transitioning from theoretical models to real-world software requires collaborative motorists. Cohort members receive priority notifications to test early, non-commercial software prototypes.",
+      technicalDetails: [
+        "Optional voluntary email registration",
+        "Anonymized data synchronization via Firebase Firestore",
+        "Strictly non-commercial research contact list"
+      ],
+      metricLabel: "PARTICIPATION STAGE: COHORT_MEMBER_ENROLLMENT"
+    }
+  ];
+
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch" id="workflow-explorer-wrapper">
+      {/* Sidebar: Step Tabs */}
+      <div className="lg:col-span-4 flex flex-col gap-3 justify-between" id="workflow-tabs-sidebar">
+        <div className="space-y-3">
+          <span className="font-mono text-[10px] text-cyanaccent font-black tracking-widest block uppercase mb-4">
+            Select Timeline Step
+          </span>
+          {steps.map((step, idx) => {
+            const isActive = activeStep === idx;
+            return (
+              <button
+                key={idx}
+                onClick={() => setActiveStep(idx)}
+                className={`w-full text-left p-4 rounded-2xl border transition-all flex items-center gap-4 cursor-pointer focus:outline-none ${
+                  isActive
+                    ? "bg-cyanaccent text-white border-cyanaccent shadow-md translate-x-1"
+                    : "bg-slate-50 text-deepnavy border-deepnavy/10 hover:border-cyanaccent/30 hover:bg-slate-100/50"
+                }`}
+                id={`workflow-tab-${idx}`}
+              >
+                <div className={`h-10 w-10 rounded-xl flex items-center justify-center font-mono text-lg shrink-0 ${
+                  isActive ? "bg-white/20 text-white" : "bg-cyanaccent/10 text-cyanaccent"
+                }`}>
+                  {idx + 1}
+                </div>
+                <div>
+                  <h4 className="font-serif font-black text-sm tracking-tight">
+                    {step.shortTitle}
+                  </h4>
+                  <p className={`text-[10px] mt-0.5 ${isActive ? "text-white/80" : "text-deepnavy/50"}`}>
+                    {step.label}
+                  </p>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="mt-6 p-4 bg-slate-50 border border-deepnavy/10 rounded-2xl hidden lg:block">
+          <p className="text-[10px] text-deepnavy/60 font-sans leading-relaxed">
+            *This timeline operates fully within a non-commercial framework. Every phase is designed to establish scientific feasibility while respecting participant sovereignty.
+          </p>
+        </div>
+      </div>
+
+      {/* Main Panel: Step Details (Dynamic Content) */}
+      <div className="lg:col-span-8 bg-slate-50 border border-deepnavy/10 rounded-2xl p-6 md:p-8 flex flex-col justify-between" id="workflow-detail-panel">
+        <div>
+          {/* Header */}
+          <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-deepnavy/10 mb-6">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl" role="img" aria-label="Step icon">
+                {steps[activeStep].icon}
+              </span>
+              <div>
+                <span className="text-[10px] font-mono font-black text-cyanaccent uppercase block">
+                  {steps[activeStep].label}
+                </span>
+                <h3 className="font-serif text-xl md:text-2xl text-deepnavy font-black tracking-tight mt-0.5">
+                  {steps[activeStep].tagline}
+                </h3>
+              </div>
+            </div>
+            <span className="text-xs bg-cyanaccent/10 text-cyanaccent border border-cyanaccent/20 px-3 py-1 rounded-full font-mono font-black">
+              ACTIVE RESEARCH STEP
+            </span>
+          </div>
+
+          {/* Description & Scientific Justification */}
+          <div className="space-y-6">
+            <div className="space-y-2">
+              <h5 className="text-xs font-mono font-bold text-deepnavy/50 uppercase tracking-widest">
+                Phase Overview
+              </h5>
+              <p className="text-sm md:text-base text-deepnavy/80 font-sans leading-relaxed">
+                {steps[activeStep].overview}
+              </p>
+            </div>
+
+            <div className="space-y-2 p-5 bg-white border border-deepnavy/10 rounded-2xl">
+              <h5 className="text-xs font-mono font-black text-cyanaccent uppercase tracking-widest flex items-center gap-1.5">
+                <span className="h-2 w-2 rounded-full bg-cyanaccent" />
+                Scientific Goal & Hypothesis
+              </h5>
+              <p className="text-xs md:text-sm text-deepnavy/80 font-sans leading-relaxed italic">
+                "{steps[activeStep].scientificGoal}"
+              </p>
+            </div>
+
+            {/* Technical Parameter Checklist */}
+            <div className="space-y-2">
+              <h5 className="text-xs font-mono font-bold text-deepnavy/50 uppercase tracking-widest">
+                Technical Security Parameters
+              </h5>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {steps[activeStep].technicalDetails.map((detail, dIdx) => (
+                  <li key={dIdx} className="flex gap-2 items-start text-xs text-deepnavy/80 font-semibold bg-white border border-deepnavy/5 p-3 rounded-xl shadow-xs">
+                    <span className="text-emerald-500 font-bold">✓</span>
+                    <span>{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer info line */}
+        <div className="mt-8 pt-4 border-t border-deepnavy/10 flex items-center justify-between text-[10px] text-deepnavy/40 font-mono">
+          <span>{steps[activeStep].metricLabel}</span>
+          <span className="hidden sm:inline">PROCESSING MODEL: SECURE_SANDBOX_ST_0{activeStep + 1}</span>
+        </div>
+      </div>
     </div>
   );
 }
