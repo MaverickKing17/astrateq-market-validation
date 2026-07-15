@@ -57,14 +57,14 @@ export default function ComparisonSection() {
         </div>
       </section>
 
-      {/* ---------------- SECTION 10: Exploring different approaches ---------------- */}
+      {/* ---------------- SECTION 9: Different approaches to improving driver awareness ---------------- */}
       <section className="max-w-7xl mx-auto px-6 border-t border-deepnavy/10 pt-24" id="approaches">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="font-mono text-xs text-cyanaccent uppercase tracking-widest font-bold">
             Philosophy comparison
           </span>
           <h2 className="font-serif text-3xl md:text-4xl text-deepnavy font-bold mt-2">
-            Exploring different approaches to driver awareness
+            Different approaches to improving driver awareness
           </h2>
           <p className="text-deepnavy/70 mt-3 font-sans">
             How does our conceptual edge-based software model contrast with general alternative categories of driver attention tracking?
@@ -111,7 +111,7 @@ export default function ComparisonSection() {
         </div>
 
         <p className="text-center text-xs text-deepnavy/50 font-sans mt-4 italic">
-          *Alternative approaches represent generalized categories. Astrateq represents an exploratory software concept currently undergoing market research.
+          *Alternative approaches represent generalized categories. Astrateq Gadgets represents an exploratory software concept currently undergoing market research.
         </p>
       </section>
 

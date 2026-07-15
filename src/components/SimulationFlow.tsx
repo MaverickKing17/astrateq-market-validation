@@ -126,7 +126,7 @@ export default function SimulationFlow() {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: "Astrateq Driver Awareness Research Study",
+          title: "Astrateq Gadgets Driver Awareness Research Study",
           text: "Check your Driver Awareness Readiness in 60 seconds with this privacy-first simulation!",
           url: referralLink,
         });

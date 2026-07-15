@@ -32,20 +32,31 @@ export default function Hero({ onStartSimulation }: HeroProps) {
           </h1>
 
           <p className="text-lg text-deepnavy/80 leading-relaxed max-w-2xl font-sans">
-            Help Astrateq explore whether a privacy-first driver awareness concept should exist. 
-            Complete a short simulation to see your Driver Awareness Score, Fatigue Risk Profile, 
-            and eligibility to join our Research Cohort.
+            This simulation explores a privacy-first approach to understanding driver awareness in Canada. 
+            No tracking. No hardware. No insurance scoring. No vehicle connection. 
+            Complete a short, 60-second exploratory assessment to see your simulated score and potential eligibility to join our national cohort.
           </p>
 
-          <div className="space-y-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
             <button
               onClick={onStartSimulation}
-              className="group relative flex items-center justify-center gap-2 bg-cyanaccent hover:bg-cyanaccent/90 text-white font-medium text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto cursor-pointer"
+              className="group relative flex items-center justify-center gap-2 bg-cyanaccent hover:bg-cyanaccent/90 text-white font-medium text-base px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
               id="hero-cta-btn"
             >
               Start Driver Awareness Simulation
-              <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </button>
+            <button
+              onClick={() => {
+                const el = document.getElementById("why-research");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="flex items-center justify-center gap-1 text-deepnavy/80 hover:text-cyanaccent font-medium text-base px-6 py-4 rounded-xl border border-deepnavy/10 hover:border-cyanaccent/30 transition-all cursor-pointer bg-white"
+              id="hero-secondary-btn"
+            >
+              Learn About The Research
+            </button>
+          </div>
 
             {/* Trust badge row */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-deepnavy/10 text-xs font-medium text-deepnavy/70">
@@ -66,20 +77,28 @@ export default function Hero({ onStartSimulation }: HeroProps) {
                 <span>Takes about 60s</span>
               </div>
             </div>
-          </div>
 
-          {/* Built in Canada banner */}
-          <div className="flex items-center gap-2 text-sm font-medium text-deepnavy/60 pt-2" id="built-in-canada-indicator">
-            <svg className="h-5 w-5 text-red-600 fill-current shrink-0" viewBox="0 0 24 24" aria-label="Maple Leaf">
-              <path d="M12,2L13.5,6.5L18,6L16,10.5L21,11L18.5,14L21,18L15.5,17L14,21.5L12,18L10,21.5L8.5,17L3,18L5.5,14L3,11L8,10.5L6,6L10.5,6.5L12,2Z" />
-            </svg>
-            <span>Built in Canada <span className="mx-1.5 text-deepnavy/20">|</span> For Canadian Drivers</span>
+            {/* Built in Canada banner */}
+            <div className="flex items-center gap-2 text-sm font-medium text-deepnavy/60 pt-2" id="built-in-canada-indicator">
+              <svg className="h-5 w-5 text-red-600 fill-current shrink-0" viewBox="0 0 24 24" aria-label="Maple Leaf">
+                <path d="M12,2L13.5,6.5L18,6L16,10.5L21,11L18.5,14L21,18L15.5,17L14,21.5L12,18L10,21.5L8.5,17L3,18L5.5,14L3,11L8,10.5L6,6L10.5,6.5L12,2Z" />
+              </svg>
+              <span>Built in Canada <span className="mx-1.5 text-deepnavy/20">|</span> For Canadian Drivers</span>
+            </div>
           </div>
-        </div>
 
         {/* Right column: Interactive illustrative dark phone mockup */}
-        <div className="lg:col-span-5 flex justify-center lg:justify-end">
-          <div className="relative w-full max-w-[340px]" id="phone-mockup-wrapper">
+        <div className="lg:col-span-5 flex flex-col items-center justify-center lg:items-end">
+          <div className="relative w-full max-w-[340px] mt-8 lg:mt-0" id="phone-mockup-wrapper">
+            
+            {/* 5-Second Clarity Badge */}
+            <div className="absolute -top-6 left-1/2 -translate-x-1/2 whitespace-nowrap z-20">
+              <div className="bg-deepnavy border border-cyanaccent/30 rounded-full px-3 py-1 shadow-md text-white text-[10px] font-mono tracking-wider uppercase flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyanaccent animate-pulse" />
+                Speculative Software Concept
+              </div>
+            </div>
+
             {/* Phone Outer Shadow Accent */}
             <div className="absolute -inset-1.5 bg-gradient-to-tr from-cyanaccent/20 to-amberaccent/20 rounded-[50px] blur-xl opacity-80" />
             
@@ -98,7 +117,7 @@ export default function Hero({ onStartSimulation }: HeroProps) {
                 <div className="flex items-center justify-between pb-4 border-b border-slate-800/60">
                   <div className="flex items-center gap-1.5">
                     <ShieldCheck className="h-4 w-4 text-cyanaccent" />
-                    <span className="font-serif text-xs font-bold tracking-tight text-white">Astrateq <span className="text-[8px] uppercase tracking-wider font-sans font-medium text-cyanaccent">Driver</span></span>
+                    <span className="font-serif text-xs font-bold tracking-tight text-white">Astrateq Gadgets <span className="text-[8px] uppercase tracking-wider font-sans font-medium text-cyanaccent">Driver</span></span>
                   </div>
                   <div className="flex flex-col gap-0.5 items-end">
                     <div className="w-3.5 h-0.5 bg-slate-400 rounded-full" />
@@ -176,6 +195,38 @@ export default function Hero({ onStartSimulation }: HeroProps) {
                   </p>
                 </div>
 
+              </div>
+            </div>
+            
+            {/* Highly Structured 5-Second Clarity & Concept Panel */}
+            <div className="mt-6 bg-white border border-deepnavy/10 rounded-2xl p-5 shadow-sm text-left max-w-[340px]" id="mockup-clarity-panel">
+              <span className="font-mono text-[9px] text-cyanaccent uppercase tracking-widest font-bold block mb-1">
+                Concept Annotation
+              </span>
+              <h4 className="font-serif text-sm font-bold text-deepnavy mb-2">
+                What is shown in this mockup?
+              </h4>
+              <p className="text-xs text-deepnavy/80 leading-relaxed font-sans mb-3">
+                This is a <strong>speculative interface design</strong> for the proposed Astrateq Gadgets mobile application. It illustrates our core research objective:
+              </p>
+              
+              <ul className="space-y-2 text-xs font-sans text-deepnavy/75 mb-3.5 border-t border-deepnavy/5 pt-3">
+                <li className="flex items-start gap-1.5">
+                  <span className="text-cyanaccent font-bold">•</span>
+                  <span><strong>Proposed Score (81)</strong>: An estimate of cognitive alertness based on subjective habit inputs.</span>
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <span className="text-cyanaccent font-bold">•</span>
+                  <span><strong>100% Offline Heuristics</strong>: Runs entirely local to your phone. No physical cameras or vehicle telemetry.</span>
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <span className="text-cyanaccent font-bold">•</span>
+                  <span><strong>The 60s Simulation</strong>: The tool on this site allows you to generate your own simulated results and explore this concept today.</span>
+                </li>
+              </ul>
+
+              <div className="bg-cyanaccent/5 border border-cyanaccent/15 rounded-lg p-2.5 text-[10px] text-deepnavy/80 font-sans">
+                <strong>Platform Goal:</strong> We are validating whether enough interest exists for this privacy-first model before committing engineering resources to build it.
               </div>
             </div>
           </div>

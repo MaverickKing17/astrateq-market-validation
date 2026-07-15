@@ -1,5 +1,5 @@
 {
-  "name": "Astrateq",
+  "name": "Astrateq Gadgets",
   "description": "Pre-launch market validation research platform for Driver Awareness Intelligence.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]

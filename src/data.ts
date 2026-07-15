@@ -111,43 +111,43 @@ export const CANADIAN_REALITIES = [
 
 export const APPROACHES = [
   {
-    name: "Continuous Third-Party Monitoring",
-    dataTransmission: "Constant cloud upload",
-    hardware: "Requires external active cameras",
-    privacy: "Cloud database storage of video feeds",
-    insurance: "High risk of telemetry sharing",
+    name: "Traditional Dashcams",
+    dataTransmission: "Continuous local or cloud loops",
+    hardware: "Requires windshield-mounted camera unit",
+    privacy: "Saves raw video footage of drivers and external roads",
+    insurance: "Manually exported or shared during crash disputes",
     astrateq: false
   },
   {
-    name: "Cloud-First Data Collection",
-    dataTransmission: "Frequent batched server uploads",
-    hardware: "Requires phone mount or plugged link",
-    privacy: "Centralized server profile storage",
-    insurance: "Data may be subpoenaed or sold",
+    name: "Driver Monitoring Cameras",
+    dataTransmission: "Real-time active cloud streaming",
+    hardware: "Requires specialized cabin infrared sensors",
+    privacy: "Constant biometric face & eye tracking analysis",
+    insurance: "Direct integration with fleet monitoring databases",
     astrateq: false
   },
   {
-    name: "Hardware-Dependent Systems",
-    dataTransmission: "Local CAN-bus integration",
-    hardware: "Requires costly built-in vehicle sensors",
-    privacy: "Vendor proprietary data silo",
-    insurance: "Tied to vehicle model restrictions",
+    name: "Wearables",
+    dataTransmission: "Continuous sync to central mobile servers",
+    hardware: "Requires active smartwatches or heart sensors",
+    privacy: "Logs highly intimate pulse & skin temperature metrics",
+    insurance: "Health & stress profiles open to premium evaluation",
     astrateq: false
   },
   {
-    name: "Astrateq's Concept",
-    dataTransmission: "Zero cloud upload (completely offline)",
-    hardware: "No hardware required to participate",
-    privacy: "User-controlled, on-device edge processing",
-    insurance: "Complete separation from insurers",
+    name: "Astrateq Gadgets Research",
+    dataTransmission: "Zero cloud upload (100% offline edge logic)",
+    hardware: "No hardware required for study participation",
+    privacy: "Speculative on-device behavioral simulation",
+    insurance: "Absolute and total decoupling from insurers",
     astrateq: true
   }
 ];
 
 export const FAQS = [
   {
-    question: "What is Astrateq?",
-    answer: "Astrateq is a Canadian technology exploration initiative. We are conducting pre-launch market validation to explore whether drivers want a privacy-first, edge-powered 'Driver Awareness Intelligence' software solution."
+    question: "What is Astrateq Gadgets?",
+    answer: "Astrateq Gadgets is a Canadian technology exploration initiative. We are conducting pre-launch market validation to explore whether drivers want a privacy-first, edge-powered 'Driver Awareness Intelligence' software solution."
   },
   {
     question: "How does the simulated scoring model work?",
@@ -163,6 +163,6 @@ export const FAQS = [
   },
   {
     question: "Is special hardware required?",
-    answer: "No. The Astrateq concept is engineered as a software-only approach designed to run on existing modern consumer smartphones. No hardware or custom vehicle modifications are designed or committed."
+    answer: "No. The Astrateq Gadgets concept is engineered as a software-only approach designed to run on existing modern consumer smartphones. No hardware or custom vehicle modifications are designed or committed."
   }
 ];

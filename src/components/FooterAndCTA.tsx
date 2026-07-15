@@ -25,10 +25,10 @@ export default function FooterAndCTA({ onStartSimulation }: FooterAndCTAProps) {
       <section className="max-w-7xl mx-auto px-6 py-20 text-center border-t border-deepnavy/10" id="bottom-cta">
         <div className="max-w-3xl mx-auto space-y-6">
           <h2 className="font-serif text-3xl md:text-4xl font-bold tracking-tight text-deepnavy">
-            Help us shape a privacy-first future for Canadian roads.
+            Help shape the future of driver awareness research in Canada.
           </h2>
           <p className="text-deepnavy/70 text-sm max-w-xl mx-auto">
-            Take a few moments to contribute your habits to our local validation research. Together, we can prove the demand for offline, secure driver intelligence.
+            We're inviting early participants to help validate an entirely new approach to understanding driver awareness. Join the research cohort by completing the 60-second simulation.
           </p>
           
           <div className="pt-2">
@@ -109,7 +109,7 @@ export default function FooterAndCTA({ onStartSimulation }: FooterAndCTAProps) {
             <ul className="space-y-2 text-xs font-medium">
               <li>
                 <button onClick={() => handleScrollTo("hero")} className="text-deepnavy/70 hover:text-cyanaccent transition-colors text-left cursor-pointer">
-                  About Astrateq
+                  About Astrateq Gadgets
                 </button>
               </li>
               <li>
@@ -143,7 +143,7 @@ export default function FooterAndCTA({ onStartSimulation }: FooterAndCTAProps) {
           {/* Mandatory disclaimer paragraph stating clearly this is an independent pre-launch market validation site */}
           <div className="md:max-w-xl text-right md:text-right text-[10px] leading-relaxed font-sans" id="footer-legal-disclaimer">
             <span className="font-semibold block text-deepnavy/70 mb-1">Legal Disclaimer Notice</span>
-            Astrateq is an independent pre-launch market validation site. No physical product exists yet, there is no hardware, no software is for sale, and participation is completely free. Information provided is for research purposes only.
+            Astrateq Gadgets is an independent pre-launch market validation site. No physical product exists yet, there is no hardware, no software is for sale, and participation is completely free. Information provided is for research purposes only.
           </div>
 
         </div>

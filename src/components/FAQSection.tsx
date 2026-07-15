@@ -30,7 +30,7 @@ export default function FAQSection() {
             Got Questions? We have answers.
           </h2>
           <p className="text-deepnavy/70 mt-3 font-sans">
-            Learn more about the scope, intent, and parameters of the Astrateq market-validation study.
+            Learn more about the scope, intent, and parameters of the Astrateq Gadgets market-validation study.
           </p>
         </div>
 

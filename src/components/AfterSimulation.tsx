@@ -22,16 +22,16 @@ export default function AfterSimulation() {
               What happens after your simulation
             </h2>
 
-            <div className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
               {/* Step 1 */}
               <div className="flex gap-4" id="after-step-1">
                 <div className="p-2 bg-amberaccent/10 rounded-lg h-fit text-amberaccent shrink-0">
                   <UserCheck className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-serif text-lg text-deepnavy font-bold">Receive your profile</h4>
-                  <p className="text-sm text-deepnavy/70 font-sans">
-                    Your answers instantly translate into a simulated score report. No delays, no email gates required for baseline results.
+                  <h4 className="font-serif text-lg text-deepnavy font-bold">1. Immediate Score Diagnostics</h4>
+                  <p className="text-xs text-deepnavy/70 font-sans mt-1">
+                    Your answers instantly generate a simulated score report demonstrating baseline attention indicators. No email wall required.
                   </p>
                 </div>
               </div>
@@ -42,9 +42,9 @@ export default function AfterSimulation() {
                   <ShieldCheck className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-serif text-lg text-deepnavy font-bold">Learn about the Research Cohort</h4>
-                  <p className="text-sm text-deepnavy/70 font-sans">
-                    Read the detailed research priorities for our privacy-first on-device software explore initiative.
+                  <h4 className="font-serif text-lg text-deepnavy font-bold">2. Simulated Awareness Profile</h4>
+                  <p className="text-xs text-deepnavy/70 font-sans mt-1">
+                    Review a conceptual behavioral profile depicting high-risk driving environments and individual fatigue stress-triggers.
                   </p>
                 </div>
               </div>
@@ -55,12 +55,44 @@ export default function AfterSimulation() {
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-serif text-lg text-deepnavy font-bold">Choose whether to join</h4>
-                  <p className="text-sm text-deepnavy/70 font-sans">
-                    Opt-in to get your custom unique referral code. This grants status badges on our validation ledger completely free, with no obligation.
+                  <h4 className="font-serif text-lg text-deepnavy font-bold">3. Optional Research Updates</h4>
+                  <p className="text-xs text-deepnavy/70 font-sans mt-1">
+                    Elect to receive quarterly whitepapers and aggregated statistical insights detailing driver habits mapped in this Canadian study.
                   </p>
                 </div>
               </div>
+
+              {/* Step 4 */}
+              <div className="flex gap-4" id="after-step-4">
+                <div className="p-2 bg-amberaccent/10 rounded-lg h-fit text-amberaccent shrink-0">
+                  <Mail className="h-5 w-5" />
+                </div>
+                <div>
+                  <h4 className="font-serif text-lg text-deepnavy font-bold">4. Early Prototype Invitations</h4>
+                  <p className="text-xs text-deepnavy/70 font-sans mt-1">
+                    Cohort participants receive early invitations to download, test, and critique offline, on-device mobile software prototypes.
+                  </p>
+                </div>
+              </div>
+
+              {/* Step 5 */}
+              <div className="flex gap-4 md:col-span-2" id="after-step-5">
+                <div className="p-2 bg-amberaccent/10 rounded-lg h-fit text-amberaccent shrink-0">
+                  <Mail className="h-5 w-5" />
+                </div>
+                <div>
+                  <h4 className="font-serif text-lg text-deepnavy font-bold">5. Future Pilot Opportunities</h4>
+                  <p className="text-xs text-deepnavy/70 font-sans mt-1">
+                    When we transition to closed, localized physical field studies in targeted Canadian municipalities, Cohort members will be selected first.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 p-4 bg-amberaccent/5 border border-amberaccent/10 rounded-xl">
+              <p className="text-xs font-sans text-deepnavy/60 italic leading-relaxed">
+                *Expectation Transparency: Astrateq Gadgets is in an exploratory pre-launch stage. No physical software packages or hardware devices currently exist. We commit to keeping our timelines realistic, transparent, and completely free of false marketing promises.
+              </p>
             </div>
           </div>
         </div>
