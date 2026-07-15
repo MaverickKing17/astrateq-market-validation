@@ -4,7 +4,7 @@
  */
 
 import React from "react";
-import { ShieldAlert, ShieldCheck, Cpu, Clock, Smartphone, ChevronRight, Zap, Eye, Brain, Activity, ChevronDown } from "lucide-react";
+import { ShieldAlert, ShieldCheck, Cpu, Clock, Smartphone, ChevronRight, Zap, Eye, Brain, Activity, ChevronDown, Info, Sparkles } from "lucide-react";
 
 interface HeroProps {
   onStartSimulation: () => void;
@@ -290,34 +290,70 @@ export default function Hero({ onStartSimulation }: HeroProps) {
             </div>
             
             {/* Highly Structured 5-Second Clarity & Concept Panel */}
-            <div className="mt-6 bg-white border border-deepnavy/10 rounded-2xl p-5 shadow-sm text-left max-w-[340px]" id="mockup-clarity-panel">
-              <span className="font-mono text-[9px] text-cyanaccent uppercase tracking-widest font-bold block mb-1">
-                Concept Annotation
-              </span>
-              <h4 className="font-serif text-sm font-bold text-deepnavy mb-2">
+            <div 
+              className="mt-8 bg-gradient-to-b from-white to-[#f8fafc] border-t-[5px] border-t-cyanaccent border-x border-b border-slate-200/90 rounded-2xl p-6 shadow-[0_12px_30px_rgba(15,23,42,0.08)] text-left max-w-[340px] relative overflow-hidden" 
+              id="mockup-clarity-panel"
+            >
+              {/* Subtle background abstract shape */}
+              <div className="absolute -top-12 -right-12 w-24 h-24 bg-cyanaccent/5 rounded-full blur-xl pointer-events-none" />
+
+              <div className="flex items-center gap-2 mb-2.5">
+                <span className="p-1 bg-cyanaccent/10 text-cyanaccent rounded-md">
+                  <Info className="h-4 w-4" />
+                </span>
+                <span className="font-mono text-[10px] text-cyanaccent uppercase tracking-widest font-black">
+                  Concept Annotation
+                </span>
+              </div>
+
+              <h4 className="font-serif text-base font-black text-deepnavy tracking-tight mb-2.5">
                 What is shown in this mockup?
               </h4>
-              <p className="text-xs text-deepnavy/80 leading-relaxed font-sans mb-3">
-                This is a <strong>speculative interface design</strong> for the proposed Astrateq Gadgets mobile application. It illustrates our core research objective:
+
+              <p className="text-[13px] text-deepnavy/90 leading-relaxed font-sans mb-4">
+                This is a <strong className="text-deepnavy font-extrabold underline decoration-cyanaccent/35 decoration-2">speculative interface design</strong> for the proposed Astrateq Gadgets mobile application. It illustrates our core research objective:
               </p>
               
-              <ul className="space-y-2 text-xs font-sans text-deepnavy/75 mb-3.5 border-t border-deepnavy/5 pt-3">
-                <li className="flex items-start gap-1.5">
-                  <span className="text-cyanaccent font-bold">•</span>
-                  <span><strong>Proposed Score (81)</strong>: An estimate of cognitive alertness based on subjective habit inputs.</span>
-                </li>
-                <li className="flex items-start gap-1.5">
-                  <span className="text-cyanaccent font-bold">•</span>
-                  <span><strong>100% Offline Heuristics</strong>: Runs entirely local to your phone. No physical cameras or vehicle telemetry.</span>
-                </li>
-                <li className="flex items-start gap-1.5">
-                  <span className="text-cyanaccent font-bold">•</span>
-                  <span><strong>The 60s Simulation</strong>: The tool on this site allows you to generate your own simulated results and explore this concept today.</span>
-                </li>
-              </ul>
+              <div className="space-y-4 mb-4 border-t border-slate-200/80 pt-4">
+                <div className="flex items-start gap-3">
+                  <div className="p-1.5 bg-cyanaccent/10 text-cyanaccent rounded-lg mt-0.5 shrink-0 border border-cyanaccent/20">
+                    <Activity className="h-3.5 w-3.5" />
+                  </div>
+                  <div>
+                    <span className="block text-[12.5px] font-extrabold text-deepnavy leading-snug">Proposed Score (81)</span>
+                    <span className="block text-xs text-deepnavy/75 mt-0.5 leading-relaxed font-medium">An estimate of cognitive alertness based on subjective habit inputs.</span>
+                  </div>
+                </div>
 
-              <div className="bg-cyanaccent/5 border border-cyanaccent/15 rounded-lg p-2.5 text-[10px] text-deepnavy/80 font-sans">
-                <strong>Platform Goal:</strong> We are validating whether enough interest exists for this privacy-first model before committing engineering resources to build it.
+                <div className="flex items-start gap-3">
+                  <div className="p-1.5 bg-emerald-500/10 text-emerald-600 rounded-lg mt-0.5 shrink-0 border border-emerald-500/20">
+                    <ShieldCheck className="h-3.5 w-3.5" />
+                  </div>
+                  <div>
+                    <span className="block text-[12.5px] font-extrabold text-deepnavy leading-snug">100% Offline Heuristics</span>
+                    <span className="block text-xs text-deepnavy/75 mt-0.5 leading-relaxed font-medium">Runs entirely local to your phone. No physical cameras or vehicle telemetry.</span>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="p-1.5 bg-amberaccent/10 text-amberaccent rounded-lg mt-0.5 shrink-0 border border-amberaccent/20">
+                    <Clock className="h-3.5 w-3.5" />
+                  </div>
+                  <div>
+                    <span className="block text-[12.5px] font-extrabold text-deepnavy leading-snug">The 60s Simulation</span>
+                    <span className="block text-xs text-deepnavy/75 mt-0.5 leading-relaxed font-medium">The tool on this site allows you to generate your own simulated results and explore this concept today.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-cyanaccent/5 border border-cyanaccent/15 rounded-xl p-3.5 text-xs text-deepnavy/90 font-sans shadow-sm">
+                <div className="flex items-center gap-1.5 mb-1 font-extrabold text-cyanaccent uppercase text-[9.5px] tracking-wider">
+                  <Sparkles className="h-3 w-3" />
+                  Platform Goal
+                </div>
+                <p className="leading-relaxed font-medium text-deepnavy/80">
+                  We are validating whether enough interest exists for this privacy-first model before committing engineering resources to build it.
+                </p>
               </div>
             </div>
           </div>
