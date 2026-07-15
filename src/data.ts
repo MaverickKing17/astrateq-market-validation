@@ -202,6 +202,16 @@ export const FAQS = [
   },
   {
     category: "Methodology",
+    question: "How are the mathematical stress weights (scoreWeight) determined?",
+    answer: "The scoring weights used in the exploratory simulator are derived from public road safety research datasets, specifically modeling daylight-dependent circadian fatigue and cumulative mileage risk. These are adjusted for Canadian climate variables to serve as a baseline for future passive edge-based observation thresholds."
+  },
+  {
+    category: "Data Sharing",
+    question: "Do you use cookies or track personal user identities across other sites?",
+    answer: "No. Our sandboxing principles strictly forbid cross-site tracking or commercial fingerprinting. There are no marketing pixels, social media plugins, or dynamic ad tracking elements implemented on this validation platform. Your participation remains entirely isolated and self-contained."
+  },
+  {
+    category: "Methodology",
     question: "What are the next steps in the validation roadmap?",
     answer: "We are currently in Phase 1 (Concept Validation). If our validation metrics demonstrate significant motorist interest and meet statistical thresholds, Phase 2 will focus on Simulation Analytics, and Phase 3 will investigate edge-computing mobile performance. All milestone reports will be shared transparently with our registered cohort."
   }

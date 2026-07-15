@@ -200,7 +200,7 @@ export default function SimulationFlow() {
         </div>
 
         {/* Outer simulation card frame */}
-        <div className="bg-pearl/50 border border-deepnavy/10 rounded-3xl p-6 md:p-10 shadow-sm relative overflow-hidden">
+        <div className="bg-gradient-to-br from-[#0B1526] to-[#12233F] border border-[#20314d] rounded-3xl p-6 md:p-10 shadow-xl relative overflow-hidden text-white">
           
           {/* Animated step switcher */}
           <AnimatePresence mode="wait">
@@ -217,13 +217,13 @@ export default function SimulationFlow() {
               >
                 {/* Progress bar */}
                 <div className="space-y-2">
-                  <div className="flex justify-between items-center text-xs font-mono text-deepnavy/60">
+                  <div className="flex justify-between items-center text-xs font-mono text-slate-300">
                     <span>Question {currentQuestionIndex + 1} of {QUESTIONS.length}</span>
                     <span>{Math.round(((currentQuestionIndex + 1) / QUESTIONS.length) * 100)}% Complete</span>
                   </div>
-                  <div className="w-full h-1.5 bg-deepnavy/5 rounded-full overflow-hidden">
+                  <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
                     <div 
-                      className="h-full bg-cyanaccent transition-all duration-300"
+                      className="h-full bg-cyanaccent transition-all duration-300 shadow-[0_0_8px_rgba(6,182,212,0.6)]"
                       style={{ width: `${((currentQuestionIndex + 1) / QUESTIONS.length) * 100}%` }}
                     />
                   </div>
@@ -231,10 +231,10 @@ export default function SimulationFlow() {
 
                 {/* Question title */}
                 <div className="space-y-2">
-                  <span className="text-[10px] font-mono font-bold tracking-wider uppercase text-cyanaccent bg-cyanaccent/10 px-2.5 py-1 rounded-full">
+                  <span className="text-[10px] font-mono font-bold tracking-wider uppercase text-cyanaccent bg-cyanaccent/15 border border-cyanaccent/30 px-2.5 py-1 rounded-full">
                     {currentQuestion.category}
                   </span>
-                  <h3 className="font-serif text-xl md:text-2xl text-deepnavy font-bold pt-2">
+                  <h3 className="font-serif text-xl md:text-2xl text-white font-bold pt-2">
                     {currentQuestion.text}
                   </h3>
                 </div>
@@ -249,8 +249,8 @@ export default function SimulationFlow() {
                         onClick={() => handleSelectOption(option.id)}
                         className={`w-full text-left p-5 rounded-xl border text-sm font-sans transition-all flex items-center justify-between cursor-pointer ${
                           isSelected 
-                            ? "bg-cyanaccent/10 border-cyanaccent text-deepnavy font-semibold shadow-sm" 
-                            : "bg-white border-deepnavy/10 hover:border-deepnavy/30 text-deepnavy/80 hover:text-deepnavy"
+                            ? "bg-cyanaccent/15 border-cyanaccent text-white font-bold shadow-md" 
+                            : "bg-[#070d1a]/50 border-[#20314d] hover:border-cyanaccent/50 text-slate-200 hover:text-white"
                         }`}
                         id={`option-${currentQuestion.id}-${option.id}`}
                       >
@@ -258,7 +258,7 @@ export default function SimulationFlow() {
                         <div className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 ${
                           isSelected 
                             ? "border-cyanaccent bg-cyanaccent text-white" 
-                            : "border-deepnavy/20 bg-white"
+                            : "border-slate-700 bg-slate-800/80"
                         }`}>
                           {isSelected && <Check className="h-3.5 w-3.5" />}
                         </div>
@@ -268,11 +268,11 @@ export default function SimulationFlow() {
                 </div>
 
                 {/* Navigation Actions */}
-                <div className="flex justify-between items-center pt-6 border-t border-deepnavy/10">
+                <div className="flex justify-between items-center pt-6 border-t border-[#20314d]">
                   <button
                     onClick={handlePrevQuestion}
                     disabled={currentQuestionIndex === 0}
-                    className="px-5 py-2.5 rounded-lg text-sm font-sans font-medium text-deepnavy/60 hover:text-deepnavy disabled:opacity-30 disabled:pointer-events-none transition-colors"
+                    className="px-5 py-2.5 rounded-lg text-sm font-sans font-medium text-slate-400 hover:text-white disabled:opacity-30 disabled:pointer-events-none transition-colors"
                     id="quiz-prev-btn"
                   >
                     Previous
@@ -282,7 +282,7 @@ export default function SimulationFlow() {
                     <button
                       onClick={handleNextQuestion}
                       disabled={!isOptionSelected}
-                      className="bg-deepnavy text-white disabled:bg-deepnavy/20 font-medium text-sm px-6 py-2.5 rounded-lg flex items-center gap-2 transition-all cursor-pointer"
+                      className="bg-cyanaccent hover:bg-cyanaccent/90 text-white disabled:bg-slate-800 disabled:text-slate-500 border border-transparent disabled:border-[#20314d] font-bold text-sm px-6 py-2.5 rounded-lg flex items-center gap-2 transition-all cursor-pointer"
                       id="quiz-next-btn"
                     >
                       Next Question
@@ -292,7 +292,7 @@ export default function SimulationFlow() {
                     <button
                       onClick={handleSeeResults}
                       disabled={!isOptionSelected}
-                      className="bg-cyanaccent text-white disabled:bg-cyanaccent/20 font-bold text-sm px-6 py-3 rounded-lg flex items-center gap-2 shadow-md hover:shadow-lg transition-all cursor-pointer"
+                      className="bg-cyanaccent hover:bg-cyanaccent/90 text-white disabled:bg-slate-800 disabled:text-slate-500 border border-transparent disabled:border-[#20314d] font-bold text-sm px-6 py-3 rounded-lg flex items-center gap-2 shadow-md hover:shadow-lg transition-all cursor-pointer"
                       id="quiz-submit-btn"
                     >
                       See My Driver Awareness Score
@@ -313,13 +313,13 @@ export default function SimulationFlow() {
                 className="space-y-8"
               >
                 <div className="text-center space-y-2">
-                  <div className="inline-flex p-3 bg-emerald-500/10 text-emerald-600 rounded-full mb-2">
+                  <div className="inline-flex p-3 bg-emerald-500/10 text-emerald-400 rounded-full mb-2">
                     <CheckCircle2 className="h-8 w-8" />
                   </div>
-                  <h3 className="font-serif text-2xl md:text-3xl text-deepnavy font-bold">
+                  <h3 className="font-serif text-2xl md:text-3xl text-white font-bold">
                     Simulation Successfully Evaluated
                   </h3>
-                  <p className="text-sm text-deepnavy/60 font-sans max-w-md mx-auto">
+                  <p className="text-sm text-slate-300 font-sans max-w-md mx-auto">
                     Your answers match our baseline parameters for Canadian driving patterns. Review your simulated dashboard below.
                   </p>
                 </div>
@@ -401,7 +401,7 @@ export default function SimulationFlow() {
                     <h4 className="font-serif text-sm font-black tracking-[0.1em] text-white mb-2 uppercase drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">Metrics Breakdown</h4>
                     
                     {/* Fatigue card */}
-                    <div className="flex items-center justify-between p-3.5 backdrop-blur-xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border-t border-l border-cyanaccent/30 border-r border-b border-white/[0.05] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.55)] transition-all hover:border-cyanaccent/50 hover:bg-white/[0.1]">
+                    <div className="flex items-center justify-between p-3.5 backdrop-blur-xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-[#20314d] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.55)] transition-all hover:border-cyanaccent/50 hover:bg-white/[0.1]">
                       <div className="flex items-center gap-3">
                         <div className="p-1.5 bg-cyanaccent/20 text-cyanaccent rounded-lg border border-cyanaccent/35 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
                           <Zap className="h-4.5 w-4.5" />
@@ -418,7 +418,7 @@ export default function SimulationFlow() {
                     </div>
 
                     {/* Attention card */}
-                    <div className="flex items-center justify-between p-3.5 backdrop-blur-xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border-t border-l border-cyanaccent/30 border-r border-b border-white/[0.05] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.55)] transition-all hover:border-cyanaccent/50 hover:bg-white/[0.1]">
+                    <div className="flex items-center justify-between p-3.5 backdrop-blur-xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-[#20314d] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.55)] transition-all hover:border-cyanaccent/50 hover:bg-white/[0.1]">
                       <div className="flex items-center gap-3">
                         <div className="p-1.5 bg-cyanaccent/20 text-cyanaccent rounded-lg border border-cyanaccent/35 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
                           <Eye className="h-4.5 w-4.5" />
@@ -435,7 +435,7 @@ export default function SimulationFlow() {
                     </div>
 
                     {/* Cognitive Load card */}
-                    <div className="flex items-center justify-between p-3.5 backdrop-blur-xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border-t border-l border-cyanaccent/30 border-r border-b border-white/[0.05] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.55)] transition-all hover:border-cyanaccent/50 hover:bg-white/[0.1]">
+                    <div className="flex items-center justify-between p-3.5 backdrop-blur-xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-[#20314d] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.55)] transition-all hover:border-cyanaccent/50 hover:bg-white/[0.1]">
                       <div className="flex items-center gap-3">
                         <div className="p-1.5 bg-amber-500/20 text-amberaccent rounded-lg border border-amberaccent/35 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
                           <Brain className="h-4.5 w-4.5" />
@@ -452,7 +452,7 @@ export default function SimulationFlow() {
                     </div>
 
                     {/* Environmental card */}
-                    <div className="flex items-center justify-between p-3.5 backdrop-blur-xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border-t border-l border-cyanaccent/30 border-r border-b border-white/[0.05] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.55)] transition-all hover:border-cyanaccent/50 hover:bg-white/[0.1]">
+                    <div className="flex items-center justify-between p-3.5 backdrop-blur-xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-[#20314d] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.55)] transition-all hover:border-cyanaccent/50 hover:bg-white/[0.1]">
                       <div className="flex items-center gap-3">
                         <div className="p-1.5 bg-cyanaccent/20 text-cyanaccent rounded-lg border border-cyanaccent/35 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
                           <Activity className="h-4.5 w-4.5" />
@@ -472,7 +472,7 @@ export default function SimulationFlow() {
                 </div>
 
                 {/* Important Disclaimer Link */}
-                <div className="flex items-start gap-2.5 p-4 bg-amberaccent/10 border border-amberaccent/20 rounded-xl text-deepnavy/80 text-xs font-sans">
+                <div className="flex items-start gap-2.5 p-4 bg-amber-950/40 border border-amber-800/40 rounded-xl text-slate-200 text-xs font-semibold">
                   <AlertTriangle className="h-4.5 w-4.5 text-amberaccent shrink-0 mt-0.5" />
                   <div>
                     <strong>Simulated Output — Conceptual Behavioral Model, Not Real-World Measurement.</strong> This evaluation demonstrates the planned deliverables of our on-device model and represents no physical bio-tracking or live driving telemetry.
@@ -480,17 +480,17 @@ export default function SimulationFlow() {
                 </div>
 
                 {/* OPT-IN SECTION: Join Research Cohort */}
-                <div className="border-t border-deepnavy/10 pt-8 space-y-6" id="research-cohort-enrollment">
+                <div className="border-t border-[#20314d] pt-8 space-y-6" id="research-cohort-enrollment">
                   <div className="text-center md:text-left space-y-2">
-                    <h4 className="font-serif text-2xl text-deepnavy font-black tracking-tight" id="cohort-header">Join the Active Research Cohort</h4>
-                    <p className="text-sm text-deepnavy/80 font-sans leading-relaxed" id="cohort-sub-text">
+                    <h4 className="font-serif text-2xl text-white font-black tracking-tight" id="cohort-header">Join the Active Research Cohort</h4>
+                    <p className="text-sm text-slate-200 font-sans leading-relaxed" id="cohort-sub-text">
                       Submit your email to receive the aggregated cohort findings, participate in upcoming software simulation iterations, and help shape a privacy-first alternative to commercial cabin tracking.
                     </p>
                   </div>
 
                   <form onSubmit={handleJoinCohort} className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto md:mx-0">
                     <div className="flex-1 relative">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-deepnavy/40">
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
                         <Mail className="h-5 w-5" />
                       </div>
                       <input
@@ -498,11 +498,11 @@ export default function SimulationFlow() {
                         placeholder="Enter your Canadian email address"
                         value={email}
                         onChange={(e) => {
-                          setEmail(e.target.value);
-                          if (emailError) setEmailError("");
+                           setEmail(e.target.value);
+                           if (emailError) setEmailError("");
                         }}
-                        className={`w-full pl-10 pr-4 py-3 rounded-xl bg-white border text-deepnavy font-sans text-sm focus:outline-none focus:ring-2 focus:ring-cyanaccent/50 ${
-                          emailError ? "border-red-500" : "border-deepnavy/15 focus:border-cyanaccent"
+                        className={`w-full pl-10 pr-4 py-3 rounded-xl bg-slate-900 border text-white font-sans text-sm focus:outline-none focus:ring-2 focus:ring-cyanaccent/50 ${
+                          emailError ? "border-red-500" : "border-[#20314d] focus:border-cyanaccent"
                         }`}
                         id="cohort-email-input"
                       />
@@ -521,7 +521,7 @@ export default function SimulationFlow() {
                     <p className="text-xs font-sans text-red-500" id="email-error-msg">{emailError}</p>
                   )}
 
-                  <p className="text-[11px] text-deepnavy/50 font-sans">
+                  <p className="text-[11px] text-slate-400 font-medium">
                     By submitting your email, you consent to receive periodic conceptual research updates. 
                     We completely respect your inbox. Absolutely no spam, marketing catalogs, or third-party lists.
                   </p>
@@ -540,32 +540,32 @@ export default function SimulationFlow() {
                 className="space-y-8"
               >
                 <div className="text-center space-y-2">
-                  <div className="inline-flex p-3 bg-cyanaccent/10 text-cyanaccent rounded-full mb-1">
+                  <div className="inline-flex p-3 bg-cyanaccent/15 text-cyanaccent rounded-full mb-1">
                     <UserCheck className="h-7 w-7" />
                   </div>
-                  <h3 className="font-serif text-2xl md:text-3xl text-deepnavy font-bold">
+                  <h3 className="font-serif text-2xl md:text-3xl text-white font-bold">
                     Welcome to the Cohort!
                   </h3>
-                  <p className="text-sm text-deepnavy/70 font-sans max-w-lg mx-auto">
+                  <p className="text-sm text-slate-200 font-sans max-w-lg mx-auto">
                     Your email <strong>{email}</strong> has been registered. Start sharing your link to help us validate driver interest and unlock status tiers.
                   </p>
                 </div>
 
                 {/* Share Card block */}
-                <div className="bg-white border border-deepnavy/15 rounded-2xl p-6 space-y-4" id="referral-dashboard-card">
-                  <span className="font-mono text-[10px] text-cyanaccent uppercase tracking-wider font-semibold block">
+                <div className="bg-[#091224] border border-[#20314d] rounded-2xl p-6 space-y-4 text-white" id="referral-dashboard-card">
+                  <span className="font-mono text-[10px] text-cyanaccent uppercase tracking-wider font-bold block">
                     Your Unique Invite URL
                   </span>
                   
                   {/* Share URL Row */}
                   <div className="flex flex-col sm:flex-row gap-2">
-                    <div className="flex-1 bg-pearl border border-deepnavy/10 rounded-xl px-4 py-3 font-mono text-xs text-deepnavy/80 select-all overflow-x-auto whitespace-nowrap">
+                    <div className="flex-1 bg-[#040811] border border-[#20314d] rounded-xl px-4 py-3 font-mono text-xs text-slate-300 select-all overflow-x-auto whitespace-nowrap">
                       {referralLink}
                     </div>
                     <div className="flex gap-2 shrink-0">
                       <button
                         onClick={handleCopyLink}
-                        className="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-deepnavy hover:bg-deepnavy/90 text-white font-medium text-xs px-4 py-3 rounded-xl transition-all cursor-pointer"
+                        className="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-cyanaccent hover:bg-cyanaccent/90 text-white font-bold text-xs px-4 py-3 rounded-xl transition-all cursor-pointer"
                         id="copy-link-btn"
                       >
                         {copied ? <Check className="h-4 w-4 text-emerald-400" /> : <Copy className="h-4 w-4" />}
@@ -573,7 +573,7 @@ export default function SimulationFlow() {
                       </button>
                       <button
                         onClick={handleShareLink}
-                        className="flex-1 sm:flex-none flex items-center justify-center gap-2 border border-deepnavy/20 hover:bg-deepnavy/5 text-deepnavy font-medium text-xs px-4 py-3 rounded-xl transition-all cursor-pointer"
+                        className="flex-1 sm:flex-none flex items-center justify-center gap-2 border border-slate-750 hover:bg-slate-800 text-white font-bold text-xs px-4 py-3 rounded-xl transition-all cursor-pointer"
                         id="share-link-btn"
                       >
                         {shared ? <Check className="h-4 w-4 text-emerald-400" /> : <Share2 className="h-4 w-4" />}
@@ -583,25 +583,25 @@ export default function SimulationFlow() {
                   </div>
 
                   {/* Referral Stats */}
-                  <div className="grid grid-cols-2 gap-4 pt-4 border-t border-deepnavy/10" id="referral-stats-metrics">
-                    <div className="p-3 bg-pearl/60 border border-deepnavy/5 rounded-xl">
-                      <span className="text-[10px] font-mono text-deepnavy/50 block uppercase">Referrals Secured</span>
-                      <strong className="text-2xl text-deepnavy font-bold font-serif">{referralCount}</strong>
+                  <div className="grid grid-cols-2 gap-4 pt-4 border-t border-[#20314d]" id="referral-stats-metrics">
+                    <div className="p-3 bg-[#040811] border border-[#20314d] rounded-xl">
+                      <span className="text-[10px] font-mono text-slate-400 block uppercase font-bold">Referrals Secured</span>
+                      <strong className="text-2xl text-white font-bold font-serif">{referralCount}</strong>
                     </div>
-                    <div className="p-3 bg-pearl/60 border border-deepnavy/5 rounded-xl">
-                      <span className="text-[10px] font-mono text-deepnavy/50 block uppercase">Active Tier Status</span>
+                    <div className="p-3 bg-[#040811] border border-[#20314d] rounded-xl">
+                      <span className="text-[10px] font-mono text-slate-400 block uppercase font-bold">Active Tier Status</span>
                       <strong className="text-sm text-cyanaccent font-bold block mt-1">{activeTier.name}</strong>
                     </div>
                   </div>
 
-                  <p className="text-[11px] text-deepnavy/50 font-sans italic pt-1">
+                  <p className="text-[11px] text-cyan-400 font-bold font-mono tracking-wide pt-1">
                     {activeTier.perks}
                   </p>
                 </div>
 
                 {/* Interactive Tiers Map */}
                 <div className="space-y-3 font-sans">
-                  <h4 className="text-xs font-mono text-deepnavy/50 uppercase tracking-widest font-bold">Referral Tiers</h4>
+                  <h4 className="text-xs font-mono text-slate-300 uppercase tracking-widest font-bold">Referral Tiers</h4>
                   <div className="space-y-2.5" id="referral-tiers-list">
                     {REFERRAL_TIERS.map((tier) => {
                       const isUnlocked = referralCount >= tier.referralsNeeded;
@@ -610,13 +610,13 @@ export default function SimulationFlow() {
                           key={tier.referralsNeeded} 
                           className={`p-3.5 rounded-xl border flex items-center justify-between text-xs transition-all ${
                             isUnlocked 
-                              ? "bg-cyanaccent/5 border-cyanaccent/30 text-deepnavy" 
-                              : "bg-white border-deepnavy/10 text-deepnavy/60"
+                              ? "bg-cyanaccent/15 border-cyanaccent/40 text-white shadow-md font-semibold" 
+                              : "bg-[#091224] border-[#20314d] text-slate-300"
                           }`}
                         >
                           <div className="flex items-center gap-2.5">
-                            <div className={`h-6 w-6 rounded-full flex items-center justify-center shrink-0 ${
-                              isUnlocked ? "bg-cyanaccent text-white" : "bg-deepnavy/5 text-deepnavy/40"
+                            <div className={`h-6 w-6 rounded-full flex items-center justify-center shrink-0 text-xs font-black ${
+                              isUnlocked ? "bg-cyanaccent text-white" : "bg-slate-800 text-slate-400 border border-slate-700"
                             }`}>
                               {tier.referralsNeeded}
                             </div>
@@ -637,22 +637,22 @@ export default function SimulationFlow() {
                 </div>
 
                 {/* Compliance lines */}
-                <div className="p-4 bg-deepnavy/[0.02] border border-deepnavy/10 rounded-xl text-[11px] text-deepnavy/70 leading-relaxed font-sans" id="referral-compliance-box">
-                  <span className="font-bold text-deepnavy uppercase text-[9px] tracking-wider block mb-1">Compliance & Privacy Notice</span>
+                <div className="p-4 bg-[#091224] border border-[#20314d] rounded-xl text-[11px] text-slate-300 leading-relaxed font-sans" id="referral-compliance-box">
+                  <span className="font-bold text-cyan-400 uppercase text-[9px] tracking-wider block mb-1">Compliance & Privacy Notice</span>
                   "Referral tracking uses a randomly generated code only — no personal data is shared with the people you invite. CASL-compliant: your contacts are never emailed without their own consent." No auto-email, no contact import — sharing is always a deliberate, user-initiated action.
                 </div>
 
                 {/* Reset / Simulator Panel */}
-                <div className="pt-6 border-t border-deepnavy/10 flex flex-col sm:flex-row gap-3 justify-between items-center">
+                <div className="pt-6 border-t border-[#20314d] flex flex-col sm:flex-row gap-3 justify-between items-center">
                   <button
                     onClick={handleReset}
-                    className="text-xs text-deepnavy/50 hover:text-cyanaccent underline font-mono transition-colors cursor-pointer"
+                    className="text-xs text-slate-400 hover:text-cyanaccent underline font-mono transition-colors cursor-pointer"
                     id="reset-simulation-btn"
                   >
                     ← Reset simulation state to start over
                   </button>
 
-                  <div className="flex items-center gap-2 p-2 bg-amberaccent/5 border border-amberaccent/20 rounded-lg text-xs" id="referral-simulator-panel">
+                  <div className="flex items-center gap-2 p-2 bg-amber-950/20 border border-amber-800/30 rounded-lg text-xs" id="referral-simulator-panel">
                     <span className="font-mono text-[10px] font-bold text-amberaccent shrink-0 uppercase">Simulator:</span>
                     <button
                       onClick={handleSimulateReferral}

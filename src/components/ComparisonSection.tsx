@@ -35,20 +35,32 @@ export default function ComparisonSection() {
             if (reality.icon === "Moon") IconComponent = Moon;
             if (reality.icon === "TrafficCone") IconComponent = TrafficCone;
 
+            const isEven = idx % 2 === 0;
+
             return (
               <div 
                 key={idx} 
-                className="bg-white border border-deepnavy/10 rounded-2xl p-6 hover:border-cyanaccent/30 transition-all shadow-sm flex flex-col justify-between"
+                className={`border rounded-3xl p-6 hover:shadow-lg transition-all flex flex-col justify-between bg-gradient-to-br from-[#0B1526] to-[#12233F] border-[#20314d] ${
+                  isEven 
+                    ? "hover:border-cyanaccent/50" 
+                    : "hover:border-amberaccent/50"
+                }`}
                 id={`reality-card-${idx}`}
               >
                 <div>
-                  <div className="p-3 bg-cyanaccent/10 w-fit rounded-xl mb-6 text-cyanaccent">
+                  <div className={`p-3.5 border w-fit rounded-2xl mb-6 ${
+                    isEven 
+                      ? "bg-cyan-950/40 border-cyan-800/40 text-cyan-400" 
+                      : "bg-amber-950/40 border-amber-800/40 text-amber-400"
+                  }`}>
                     <IconComponent className="h-5 w-5" />
                   </div>
-                  <h3 className="font-serif text-lg text-deepnavy font-bold mb-2">{reality.title}</h3>
-                  <p className="text-xs text-deepnavy/80 leading-relaxed font-sans">{reality.description}</p>
+                  <h3 className="font-serif text-lg text-white font-black tracking-tight mb-2">{reality.title}</h3>
+                  <p className="text-xs text-slate-200 leading-relaxed font-sans font-semibold">{reality.description}</p>
                 </div>
-                <div className="border-t border-deepnavy/5 pt-3 mt-4 text-[10px] font-mono text-cyanaccent font-semibold uppercase">
+                <div className={`border-t pt-3 mt-4 text-[10px] font-mono font-black uppercase tracking-wider ${
+                  isEven ? "border-white/10 text-cyan-400" : "border-white/10 text-amber-400"
+                }`}>
                   Canada localized
                 </div>
               </div>
@@ -73,91 +85,91 @@ export default function ComparisonSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch" id="philosophy-columns-container">
           {/* Left Column: Traditional Approach */}
-          <div className="bg-white border border-red-500/10 rounded-2xl p-8 hover:border-red-500/20 transition-all shadow-sm flex flex-col justify-between" id="traditional-philosophy-card">
+          <div className="bg-gradient-to-br from-[#0B1526] to-[#12233F] border border-red-500/30 rounded-3xl p-8 hover:border-red-500/50 hover:shadow-lg transition-all flex flex-col justify-between" id="traditional-philosophy-card">
             <div>
-              <div className="flex items-center gap-2 pb-4 border-b border-deepnavy/15 mb-6">
-                <span className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
-                <h3 className="font-serif text-xl font-black text-deepnavy">Traditional Approach</h3>
+              <div className="flex items-center gap-2 pb-4 border-b border-white/10 mb-6">
+                <span className="h-2.5 w-2.5 rounded-full bg-red-500 animate-pulse" />
+                <h3 className="font-serif text-2xl font-black text-white">Traditional Approach</h3>
               </div>
               
               <ul className="space-y-5 font-sans text-sm">
                 <li className="flex gap-3 items-start">
-                  <div className="h-5 w-5 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✕</div>
+                  <div className="h-5.5 w-5.5 rounded-full bg-red-950/40 text-red-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 border border-red-800/40">✕</div>
                   <div>
-                    <strong className="text-deepnavy block font-black">Continuous tracking</strong>
-                    <span className="text-deepnavy/70 text-xs">Constant stream of visual monitoring, sensor logs, and location metrics.</span>
+                    <strong className="text-white block font-black">Continuous tracking</strong>
+                    <span className="text-slate-300 font-medium text-xs leading-relaxed">Constant stream of visual monitoring, sensor logs, and location metrics.</span>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <div className="h-5 w-5 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✕</div>
+                  <div className="h-5.5 w-5.5 rounded-full bg-red-950/40 text-red-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 border border-red-800/40">✕</div>
                   <div>
-                    <strong className="text-deepnavy block font-black">Cloud-dependent storage</strong>
-                    <span className="text-deepnavy/70 text-xs">Biometric face, eye, and route telemetry continuously synchronized to central cloud nodes.</span>
+                    <strong className="text-white block font-black">Cloud-dependent storage</strong>
+                    <span className="text-slate-300 font-medium text-xs leading-relaxed">Biometric face, eye, and route telemetry continuously synchronized to central cloud nodes.</span>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <div className="h-5 w-5 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✕</div>
+                  <div className="h-5.5 w-5.5 rounded-full bg-red-950/40 text-red-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 border border-red-800/40">✕</div>
                   <div>
-                    <strong className="text-deepnavy block font-black">Third-party data monetization</strong>
-                    <span className="text-deepnavy/70 text-xs">Integration of behavioral patterns into commercial telemetry and profiling systems.</span>
+                    <strong className="text-white block font-black">Third-party data monetization</strong>
+                    <span className="text-slate-300 font-medium text-xs leading-relaxed">Integration of behavioral patterns into commercial telemetry and profiling systems.</span>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <div className="h-5 w-5 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✕</div>
+                  <div className="h-5.5 w-5.5 rounded-full bg-red-950/40 text-red-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 border border-red-800/40">✕</div>
                   <div>
-                    <strong className="text-deepnavy block font-black">Hardware-locked requirements</strong>
-                    <span className="text-deepnavy/70 text-xs">Mandatory hardware integration with proprietary cabin cameras and vehicle ports.</span>
+                    <strong className="text-white block font-black">Hardware-locked requirements</strong>
+                    <span className="text-slate-300 font-medium text-xs leading-relaxed">Mandatory hardware integration with proprietary cabin cameras and vehicle ports.</span>
                   </div>
                 </li>
               </ul>
             </div>
             
-            <div className="mt-8 pt-4 border-t border-deepnavy/5 text-xs text-deepnavy/40 font-mono">
+            <div className="mt-8 pt-4 border-t border-white/10 text-[10px] text-red-400 font-mono font-bold tracking-wider">
               PARADIGM: CENTRALIZED TRACKING
             </div>
           </div>
 
           {/* Right Column: Astrateq Concept */}
-          <div className="bg-cyanaccent/5 border border-cyanaccent/30 rounded-2xl p-8 hover:border-cyanaccent/50 transition-all shadow-sm flex flex-col justify-between" id="astrateq-philosophy-card">
+          <div className="bg-gradient-to-br from-[#0B1526] to-[#12233F] border border-[#20314d] hover:border-cyanaccent/50 hover:shadow-lg transition-all flex flex-col justify-between" id="astrateq-philosophy-card">
             <div>
-              <div className="flex items-center gap-2 pb-4 border-b border-cyanaccent/20 mb-6">
-                <span className="h-2 w-2 rounded-full bg-cyanaccent animate-pulse" />
-                <h3 className="font-serif text-xl font-black text-deepnavy">Astrateq Concept</h3>
+              <div className="flex items-center gap-2 pb-4 border-b border-white/10 mb-6">
+                <span className="h-2.5 w-2.5 rounded-full bg-cyan-400 animate-pulse" />
+                <h3 className="font-serif text-2xl font-black text-white">Astrateq Concept</h3>
               </div>
 
               <ul className="space-y-5 font-sans text-sm">
                 <li className="flex gap-3 items-start">
-                  <div className="h-5 w-5 rounded-full bg-cyanaccent/15 text-cyanaccent flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</div>
+                  <div className="h-5.5 w-5.5 rounded-full bg-cyan-950/40 text-cyan-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 border border-cyan-800/40">✓</div>
                   <div>
-                    <strong className="text-deepnavy block font-black">User-controlled simulation</strong>
-                    <span className="text-deepnavy/70 text-xs">Subjective, voluntary inputs that generate localized behavioral metrics on-demand.</span>
+                    <strong className="text-white block font-black">User-controlled simulation</strong>
+                    <span className="text-slate-300 font-semibold text-xs leading-relaxed">Subjective, voluntary inputs that generate localized behavioral metrics on-demand.</span>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <div className="h-5 w-5 rounded-full bg-cyanaccent/15 text-cyanaccent flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</div>
+                  <div className="h-5.5 w-5.5 rounded-full bg-cyan-950/40 text-cyan-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 border border-cyan-800/40">✓</div>
                   <div>
-                    <strong className="text-deepnavy block font-black">100% Offline processing</strong>
-                    <span className="text-deepnavy/70 text-xs">Complete computational sandboxing. No data leaves the user's mobile environment.</span>
+                    <strong className="text-white block font-black">100% Offline processing</strong>
+                    <span className="text-slate-300 font-semibold text-xs leading-relaxed">Complete computational sandboxing. No data leaves the user's mobile environment.</span>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <div className="h-5 w-5 rounded-full bg-cyanaccent/15 text-cyanaccent flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</div>
+                  <div className="h-5.5 w-5.5 rounded-full bg-cyan-950/40 text-cyan-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 border border-cyan-800/40">✓</div>
                   <div>
-                    <strong className="text-deepnavy block font-black">Zero-knowledge data design</strong>
-                    <span className="text-deepnavy/70 text-xs">Absolute decoupling of driving logs from central databases, insurance companies, and advertisers.</span>
+                    <strong className="text-white block font-black">Zero-knowledge data design</strong>
+                    <span className="text-slate-300 font-semibold text-xs leading-relaxed">Absolute decoupling of driving logs from central databases, insurance companies, and advertisers.</span>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <div className="h-5 w-5 rounded-full bg-cyanaccent/15 text-cyanaccent flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</div>
+                  <div className="h-5.5 w-5.5 rounded-full bg-cyan-950/40 text-cyan-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 border border-cyan-800/40">✓</div>
                   <div>
-                    <strong className="text-deepnavy block font-black">Software-first validation model</strong>
-                    <span className="text-deepnavy/70 text-xs">Designed entirely around standard smartphone hardware to bypass expensive visual accessories.</span>
+                    <strong className="text-white block font-black">Software-first validation model</strong>
+                    <span className="text-slate-300 font-semibold text-xs leading-relaxed">Designed entirely around standard smartphone hardware to bypass expensive visual accessories.</span>
                   </div>
                 </li>
               </ul>
             </div>
 
-            <div className="mt-8 pt-4 border-t border-cyanaccent/10 text-xs text-cyanaccent font-mono">
+            <div className="mt-8 pt-4 border-t border-white/10 text-[10px] text-cyan-400 font-mono font-bold tracking-wider">
               PARADIGM: SOVEREIGN EDGE MODEL
             </div>
           </div>

@@ -59,7 +59,7 @@ export default function DataHandling() {
         </div>
 
         {/* Dynamic Sandbox Auditor Widget */}
-        <div className="bg-gradient-to-br from-[#070d1a] to-[#0d1e3d] text-white rounded-3xl p-6 md:p-10 shadow-xl border border-cyanaccent/20 mb-16 relative overflow-hidden" id="sandbox-auditor">
+        <div className="bg-gradient-to-br from-[#0B1526] to-[#12233F] text-white rounded-3xl p-6 md:p-10 shadow-xl border border-[#20314d] mb-16 relative overflow-hidden" id="sandbox-auditor">
           {/* Ambient glow decoration */}
           <div className="absolute -top-24 -left-24 w-48 h-48 bg-cyanaccent/20 rounded-full blur-[50px] pointer-events-none" />
           <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-emerald-500/10 rounded-full blur-[50px] pointer-events-none" />
@@ -83,7 +83,7 @@ export default function DataHandling() {
                   disabled={isAuditing}
                   className={`px-6 py-3.5 rounded-xl text-xs font-bold font-mono tracking-wider flex items-center gap-2 transition-all cursor-pointer shadow-md ${
                     isAuditing
-                      ? "bg-slate-800 text-slate-400 cursor-not-allowed"
+                      ? "bg-slate-800 text-slate-400 cursor-not-allowed border border-slate-700"
                       : "bg-cyanaccent hover:bg-cyanaccent/90 text-white hover:shadow-lg hover:-translate-y-0.5"
                   }`}
                   id="trigger-privacy-audit-btn"
@@ -104,7 +104,7 @@ export default function DataHandling() {
             </div>
 
             {/* Widget Right Interactive Terminal Screen */}
-            <div className="lg:col-span-7 bg-[#040811] rounded-2xl border border-white/[0.08] p-5 font-mono text-xs text-slate-300 min-h-[220px] flex flex-col justify-between" id="auditor-terminal-screen">
+            <div className="lg:col-span-7 bg-[#040811] rounded-2xl border border-[#20314d] p-5 font-mono text-xs text-slate-300 min-h-[220px] flex flex-col justify-between" id="auditor-terminal-screen">
               <div className="space-y-2">
                 {/* Simulated Tab Bar */}
                 <div className="flex items-center justify-between pb-3 border-b border-white/[0.06] mb-4 text-[10px] text-slate-500">
@@ -164,89 +164,89 @@ export default function DataHandling() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12" id="data-handling-grid">
           
           {/* Column 1: What we collect */}
-          <div className="bg-[#FAF9F6] border border-cyanaccent/20 rounded-2xl p-10 hover:shadow-md transition-all duration-300" id="collect-box">
+          <div className="bg-gradient-to-br from-[#0B1526] to-[#12233F] border border-[#20314d] rounded-2xl p-10 hover:shadow-lg transition-all duration-300" id="collect-box">
             <div className="flex items-center gap-3 mb-8">
-              <div className="p-2.5 bg-cyanaccent/10 text-cyanaccent rounded-xl">
+              <div className="p-2.5 bg-cyan-950/40 text-cyan-400 border border-cyan-800/40 rounded-xl">
                 <Check className="h-6 w-6 stroke-[3]" />
               </div>
-              <h3 className="font-serif text-2xl text-deepnavy font-black tracking-tight">What we intentionally collect</h3>
+              <h3 className="font-serif text-2xl text-white font-black tracking-tight">What we intentionally collect</h3>
             </div>
             
-            <ul className="space-y-6 font-sans text-sm text-deepnavy/80">
+            <ul className="space-y-6 font-sans text-sm text-slate-300">
               <li className="flex items-start gap-4">
-                <div className="h-5 w-5 rounded-full bg-cyanaccent/10 text-cyanaccent flex items-center justify-center shrink-0 mt-0.5">
+                <div className="h-5 w-5 rounded-full bg-cyan-950/40 text-cyan-400 border border-cyan-800/40 flex items-center justify-center shrink-0 mt-0.5">
                   <Check className="h-3 w-3 stroke-[3]" />
                 </div>
                 <div>
-                  <strong className="text-deepnavy block text-base font-black tracking-tight mb-1">Simulation Answers</strong>
-                  <span className="text-deepnavy/70 leading-relaxed block text-xs font-medium">We process your multiple-choice selections in local storage to compute your simulated score and understand participant driving stress patterns.</span>
+                  <strong className="text-white block text-base font-black tracking-tight mb-1">Simulation Answers</strong>
+                  <span className="text-slate-200 leading-relaxed block text-xs font-semibold">We process your multiple-choice selections in local storage to compute your simulated score and understand participant driving stress patterns.</span>
                 </div>
               </li>
               <li className="flex items-start gap-4">
-                <div className="h-5 w-5 rounded-full bg-cyanaccent/10 text-cyanaccent flex items-center justify-center shrink-0 mt-0.5">
+                <div className="h-5 w-5 rounded-full bg-cyan-950/40 text-cyan-400 border border-cyan-800/40 flex items-center justify-center shrink-0 mt-0.5">
                   <Check className="h-3 w-3 stroke-[3]" />
                 </div>
                 <div>
-                  <strong className="text-deepnavy block text-base font-black tracking-tight mb-1">Optional Email Address</strong>
-                  <span className="text-deepnavy/70 leading-relaxed block text-xs font-medium">Only if you choose to join the National Research Cohort. This is used solely to contact you about upcoming exploratory pilot updates.</span>
+                  <strong className="text-white block text-base font-black tracking-tight mb-1">Optional Email Address</strong>
+                  <span className="text-slate-200 leading-relaxed block text-xs font-semibold">Only if you choose to join the National Research Cohort. This is used solely to contact you about upcoming exploratory pilot updates.</span>
                 </div>
               </li>
               <li className="flex items-start gap-4">
-                <div className="h-5 w-5 rounded-full bg-cyanaccent/10 text-cyanaccent flex items-center justify-center shrink-0 mt-0.5">
+                <div className="h-5 w-5 rounded-full bg-cyan-950/40 text-cyan-400 border border-cyan-800/40 flex items-center justify-center shrink-0 mt-0.5">
                   <Check className="h-3 w-3 stroke-[3]" />
                 </div>
                 <div>
-                  <strong className="text-deepnavy block text-base font-black tracking-tight mb-1">Referral Action Tags</strong>
-                  <span className="text-deepnavy/70 leading-relaxed block text-xs font-medium">A randomly generated alphanumeric code string (e.g., ASTQ-XXXXXX) containing zero connections to real personal identifiers.</span>
+                  <strong className="text-white block text-base font-black tracking-tight mb-1">Referral Action Tags</strong>
+                  <span className="text-slate-200 leading-relaxed block text-xs font-semibold">A randomly generated alphanumeric code string (e.g., ASTQ-XXXXXX) containing zero connections to real personal identifiers.</span>
                 </div>
               </li>
             </ul>
           </div>
 
           {/* Column 2: What we don't collect */}
-          <div className="bg-[#FAF9F6] border border-red-500/10 rounded-2xl p-10 hover:shadow-md transition-all duration-300" id="dont-collect-box">
+          <div className="bg-gradient-to-br from-[#0B1526] to-[#12233F] border border-[#20314d] rounded-2xl p-10 hover:shadow-lg transition-all duration-300" id="dont-collect-box">
             <div className="flex items-center gap-3 mb-8">
-              <div className="p-2.5 bg-red-500/10 text-red-600 rounded-xl">
+              <div className="p-2.5 bg-red-950/40 text-red-400 border border-red-800/40 rounded-xl">
                 <X className="h-6 w-6 stroke-[3]" />
               </div>
-              <h3 className="font-serif text-2xl text-deepnavy font-black tracking-tight">What we intentionally never collect</h3>
+              <h3 className="font-serif text-2xl text-white font-black tracking-tight">What we intentionally never collect</h3>
             </div>
             
-            <ul className="space-y-6 font-sans text-sm text-deepnavy/80">
+            <ul className="space-y-6 font-sans text-sm text-slate-300">
               <li className="flex items-start gap-4">
-                <div className="h-5 w-5 rounded-full bg-red-500/10 text-red-600 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="h-5 w-5 rounded-full bg-red-950/40 text-red-400 border border-red-800/40 flex items-center justify-center shrink-0 mt-0.5">
                   <X className="h-3 w-3 stroke-[3]" />
                 </div>
                 <div>
-                  <strong className="text-deepnavy block text-base font-black tracking-tight mb-1">Real Driving Data & Telemetry</strong>
-                  <span className="text-deepnavy/70 leading-relaxed block text-xs font-medium">We never collect, track, or capture live vehicle speeds, acceleration profiles, steering angles, or braking activities.</span>
+                  <strong className="text-white block text-base font-black tracking-tight mb-1">Real Driving Data & Telemetry</strong>
+                  <span className="text-slate-200 leading-relaxed block text-xs font-semibold">We never collect, track, or capture live vehicle speeds, acceleration profiles, steering angles, or braking activities.</span>
                 </div>
               </li>
               <li className="flex items-start gap-4">
-                <div className="h-5 w-5 rounded-full bg-red-500/10 text-red-600 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="h-5 w-5 rounded-full bg-red-950/40 text-red-400 border border-red-800/40 flex items-center justify-center shrink-0 mt-0.5">
                   <X className="h-3 w-3 stroke-[3]" />
                 </div>
                 <div>
-                  <strong className="text-deepnavy block text-base font-black tracking-tight mb-1">Location & GPS Histories</strong>
-                  <span className="text-deepnavy/70 leading-relaxed block text-xs font-medium">We do not request, read, or stream actual GPS coordinates, destination addresses, or maps routing logs.</span>
+                  <strong className="text-white block text-base font-black tracking-tight mb-1">Location & GPS Histories</strong>
+                  <span className="text-slate-200 leading-relaxed block text-xs font-semibold">We do not request, read, or stream actual GPS coordinates, destination addresses, or maps routing logs.</span>
                 </div>
               </li>
               <li className="flex items-start gap-4">
-                <div className="h-5 w-5 rounded-full bg-red-500/10 text-red-600 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="h-5 w-5 rounded-full bg-red-950/40 text-red-400 border border-red-800/40 flex items-center justify-center shrink-0 mt-0.5">
                   <X className="h-3 w-3 stroke-[3]" />
                 </div>
                 <div>
-                  <strong className="text-deepnavy block text-base font-black tracking-tight mb-1">Vehicle Identifiers (VIN)</strong>
-                  <span className="text-deepnavy/70 leading-relaxed block text-xs font-medium">Our concept remains fully hardware-agnostic and does not associate with your specific vehicle identifiers or license plates.</span>
+                  <strong className="text-white block text-base font-black tracking-tight mb-1">Vehicle Identifiers (VIN)</strong>
+                  <span className="text-slate-200 leading-relaxed block text-xs font-semibold">Our concept remains fully hardware-agnostic and does not associate with your specific vehicle identifiers or license plates.</span>
                 </div>
               </li>
               <li className="flex items-start gap-4">
-                <div className="h-5 w-5 rounded-full bg-red-500/10 text-red-600 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="h-5 w-5 rounded-full bg-red-950/40 text-red-400 border border-red-800/40 flex items-center justify-center shrink-0 mt-0.5">
                   <X className="h-3 w-3 stroke-[3]" />
                 </div>
                 <div>
-                  <strong className="text-deepnavy block text-base font-black tracking-tight mb-1">Insurance Syncing or Shares</strong>
-                  <span className="text-deepnavy/70 leading-relaxed block text-xs font-medium">Zero data is shared, sold, or synced with commercial auto insurance companies, licensing bureaus, or external trackers.</span>
+                  <strong className="text-white block text-base font-black tracking-tight mb-1">Insurance Syncing or Shares</strong>
+                  <span className="text-slate-200 leading-relaxed block text-xs font-semibold">Zero data is shared, sold, or synced with commercial auto insurance companies, licensing bureaus, or external trackers.</span>
                 </div>
               </li>
             </ul>
@@ -255,9 +255,9 @@ export default function DataHandling() {
         </div>
 
         {/* Legal Framework text blocks */}
-        <div className="mt-12 p-6 bg-deepnavy/[0.02] border border-deepnavy/10 rounded-2xl max-w-4xl mx-auto space-y-4" id="privacy-standards-compliance">
-          <h4 className="text-xs font-mono font-black text-deepnavy uppercase tracking-wider text-center">Canadian Research Data Compliance Standards</h4>
-          <p className="text-xs text-deepnavy/70 font-sans leading-relaxed text-center">
+        <div className="mt-12 p-6 bg-[#0B1526] border border-[#20314d] rounded-2xl max-w-4xl mx-auto space-y-4 shadow-lg text-white" id="privacy-standards-compliance">
+          <h4 className="text-xs font-mono font-black text-cyan-400 uppercase tracking-wider text-center">Canadian Research Data Compliance Standards</h4>
+          <p className="text-xs text-slate-300 font-sans leading-relaxed text-center">
             Astrateq Gadgets' compliance standards strictly respect CASL (Canada's Anti-Spam Legislation) and PIPEDA guidelines. Since we are a purely academic-level market validation study, we ensure all registrations are user-initiated and we do not compile behavioral profiles. Your email is stored securely and never aggregated with response logs, guaranteeing an absolute zero-knowledge data design.
           </p>
         </div>

@@ -30,34 +30,34 @@ export default function InfoSections() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Card 1: Preventive vs Reactive */}
-          <div className="bg-white border border-deepnavy/10 rounded-2xl p-8 hover:border-cyanaccent/30 transition-all shadow-sm" id="why-card-1">
-            <div className="p-3 bg-cyanaccent/10 w-fit rounded-xl mb-6">
-              <ClipboardList className="h-6 w-6 text-cyanaccent" />
+          <div className="bg-gradient-to-br from-[#0B1526] to-[#12233F] border border-[#20314d] hover:border-cyanaccent/50 rounded-3xl p-8 hover:shadow-lg transition-all" id="why-card-1">
+            <div className="p-3.5 bg-cyanaccent/20 border border-cyanaccent/30 w-fit rounded-2xl mb-6 text-cyan-400">
+              <ClipboardList className="h-6 w-6 text-cyan-400" />
             </div>
-            <h3 className="font-serif text-xl text-deepnavy font-bold mb-3">Preventive Cognitive Models</h3>
-            <p className="text-sm text-deepnavy/80 leading-relaxed font-sans">
+            <h3 className="font-serif text-2xl text-white font-black tracking-tight mb-3">Preventive Cognitive Models</h3>
+            <p className="text-sm text-slate-200 leading-relaxed font-sans font-medium">
               Rather than filming or tracking raw driver metrics, we investigate if simple subjective self-assessments combined with contextual data can predict cognitive drift before fatigue becomes critical.
             </p>
           </div>
 
           {/* Card 2: Absolute Sovereignty */}
-          <div className="bg-white border border-deepnavy/10 rounded-2xl p-8 hover:border-cyanaccent/30 transition-all shadow-sm" id="why-card-2">
-            <div className="p-3 bg-cyanaccent/10 w-fit rounded-xl mb-6">
-              <Cpu className="h-6 w-6 text-cyanaccent" />
+          <div className="bg-gradient-to-br from-[#0B1526] to-[#12233F] border border-[#20314d] hover:border-amberaccent/50 rounded-3xl p-8 hover:shadow-lg transition-all" id="why-card-2">
+            <div className="p-3.5 bg-amberaccent/20 border border-amberaccent/30 w-fit rounded-2xl mb-6 text-amber-400">
+              <Cpu className="h-6 w-6 text-amber-400" />
             </div>
-            <h3 className="font-serif text-xl text-deepnavy font-bold mb-3">On-Device Edge Computing</h3>
-            <p className="text-sm text-deepnavy/80 leading-relaxed font-sans">
+            <h3 className="font-serif text-2xl text-white font-black tracking-tight mb-3">On-Device Edge Computing</h3>
+            <p className="text-sm text-slate-200 leading-relaxed font-sans font-medium">
               Centralized servers and cloud-based video logs expose drivers to systemic tracking risks. We're testing lightweight behavioral structures that compute exclusively on standard smartphone hardware.
             </p>
           </div>
 
           {/* Card 3: Non-Intrusive Validation */}
-          <div className="bg-white border border-deepnavy/10 rounded-2xl p-8 hover:border-cyanaccent/30 transition-all shadow-sm" id="why-card-3">
-            <div className="p-3 bg-cyanaccent/10 w-fit rounded-xl mb-6">
-              <BarChart3 className="h-6 w-6 text-cyanaccent" />
+          <div className="bg-gradient-to-br from-[#0B1526] to-[#12233F] border border-[#20314d] hover:border-cyanaccent/50 rounded-3xl p-8 hover:shadow-lg transition-all" id="why-card-3">
+            <div className="p-3.5 bg-cyanaccent/20 border border-cyanaccent/30 w-fit rounded-2xl mb-6 text-cyan-400">
+              <BarChart3 className="h-6 w-6 text-cyan-400" />
             </div>
-            <h3 className="font-serif text-xl text-deepnavy font-bold mb-3">Independent Science Focus</h3>
-            <p className="text-sm text-deepnavy/80 leading-relaxed font-sans">
+            <h3 className="font-serif text-2xl text-white font-black tracking-tight mb-3">Independent Science Focus</h3>
+            <p className="text-sm text-slate-200 leading-relaxed font-sans font-medium">
               This initiative decouples driving diagnostics from vehicle telemetry, insurance databases, and marketing systems to establish an objective, driver-first security standard.
             </p>
           </div>
@@ -88,52 +88,52 @@ export default function InfoSections() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Deliverable 1 */}
-          <div className="bg-white border border-deepnavy/10 rounded-2xl p-8 hover:border-cyanaccent/30 transition-all shadow-sm flex flex-col justify-between" id="receive-card-1">
+          <div className="bg-gradient-to-br from-[#0B1526] to-[#12233F] border-y border-r border-l-4 border-l-cyanaccent border-y-[#20314d] border-r-[#20314d] hover:border-cyanaccent/50 rounded-3xl p-8 hover:shadow-lg transition-all flex flex-col justify-between" id="receive-card-1">
             <div>
-              <div className="flex items-center justify-between pb-4 border-b border-deepnavy/10 mb-6">
-                <span className="text-xs font-mono text-cyanaccent tracking-wider uppercase font-semibold">Report Doc // 01</span>
-                <span className="text-xs bg-slate-100 text-deepnavy px-2 py-0.5 rounded font-mono font-medium">Diagnostic</span>
+              <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+                <span className="text-xs font-mono text-cyan-400 tracking-wider uppercase font-black">Report Doc // 01</span>
+                <span className="text-[10px] bg-cyan-950/40 text-cyan-400 border border-cyan-800/40 px-2.5 py-1 rounded-md font-mono font-black uppercase">Diagnostic</span>
               </div>
-              <h3 className="font-serif text-xl text-deepnavy font-bold mb-3">Driver Awareness Score</h3>
-              <p className="text-sm text-deepnavy/80 leading-relaxed font-sans">
+              <h3 className="font-serif text-2xl text-white font-black tracking-tight mb-3">Driver Awareness Score</h3>
+              <p className="text-sm text-slate-200 leading-relaxed font-sans font-semibold">
                 A structured, simulated numerical scale representing potential alertness retention, computed from regional environmental stressors and personal fatigue vectors.
               </p>
             </div>
-            <div className="mt-6 pt-4 border-t border-deepnavy/5 text-xs text-deepnavy/50 font-mono">
+            <div className="mt-6 pt-4 border-t border-white/10 text-[10px] text-cyan-400 font-mono font-bold tracking-wider">
               METRIC: AWARENESS COEFFICIENT
             </div>
           </div>
 
           {/* Deliverable 2 */}
-          <div className="bg-white border border-deepnavy/10 rounded-2xl p-8 hover:border-cyanaccent/30 transition-all shadow-sm flex flex-col justify-between" id="receive-card-2">
+          <div className="bg-gradient-to-br from-[#0B1526] to-[#12233F] border-y border-r border-l-4 border-l-amberaccent border-y-[#20314d] border-r-[#20314d] hover:border-amberaccent/50 rounded-3xl p-8 hover:shadow-lg transition-all flex flex-col justify-between" id="receive-card-2">
             <div>
-              <div className="flex items-center justify-between pb-4 border-b border-deepnavy/10 mb-6">
-                <span className="text-xs font-mono text-cyanaccent tracking-wider uppercase font-semibold">Report Doc // 02</span>
-                <span className="text-xs bg-slate-100 text-deepnavy px-2 py-0.5 rounded font-mono font-medium">Risk Analysis</span>
+              <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+                <span className="text-xs font-mono text-amber-400 tracking-wider uppercase font-black">Report Doc // 02</span>
+                <span className="text-[10px] bg-amber-950/40 text-amber-400 border border-amber-800/40 px-2.5 py-1 rounded-md font-mono font-black uppercase">Risk Analysis</span>
               </div>
-              <h3 className="font-serif text-xl text-deepnavy font-bold mb-3">Fatigue Risk Profile</h3>
-              <p className="text-sm text-deepnavy/80 leading-relaxed font-sans">
+              <h3 className="font-serif text-2xl text-white font-black tracking-tight mb-3">Fatigue Risk Profile</h3>
+              <p className="text-sm text-slate-200 leading-relaxed font-sans font-semibold">
                 An objective breakdown detailing your vulnerability to cognitive exhaustion, particularly during challenging weather patterns or prolonged urban highway commutes.
               </p>
             </div>
-            <div className="mt-6 pt-4 border-t border-deepnavy/5 text-xs text-deepnavy/50 font-mono">
+            <div className="mt-6 pt-4 border-t border-white/10 text-[10px] text-amber-400 font-mono font-bold tracking-wider">
               METRIC: TEMPORAL STRESS FACTOR
             </div>
           </div>
 
           {/* Deliverable 3 */}
-          <div className="bg-white border border-deepnavy/10 rounded-2xl p-8 hover:border-cyanaccent/30 transition-all shadow-sm flex flex-col justify-between" id="receive-card-3">
+          <div className="bg-gradient-to-br from-[#0B1526] to-[#12233F] border-y border-r border-l-4 border-l-cyanaccent border-y-[#20314d] border-r-[#20314d] hover:border-cyanaccent/50 rounded-3xl p-8 hover:shadow-lg transition-all flex flex-col justify-between" id="receive-card-3">
             <div>
-              <div className="flex items-center justify-between pb-4 border-b border-deepnavy/10 mb-6">
-                <span className="text-xs font-mono text-cyanaccent tracking-wider uppercase font-semibold">Report Doc // 03</span>
-                <span className="text-xs bg-slate-100 text-deepnavy px-2 py-0.5 rounded font-mono font-medium">Participation</span>
+              <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+                <span className="text-xs font-mono text-cyan-400 tracking-wider uppercase font-black">Report Doc // 03</span>
+                <span className="text-[10px] bg-cyan-950/40 text-cyan-400 border border-cyan-800/40 px-2.5 py-1 rounded-md font-mono font-black uppercase">Participation</span>
               </div>
-              <h3 className="font-serif text-xl text-deepnavy font-bold mb-3">Research Cohort Invitation</h3>
-              <p className="text-sm text-deepnavy/80 leading-relaxed font-sans">
+              <h3 className="font-serif text-2xl text-white font-black tracking-tight mb-3">Research Cohort Invitation</h3>
+              <p className="text-sm text-slate-200 leading-relaxed font-sans font-semibold">
                 Direct options to help define the next generation of privacy-first driver security models, gaining priority access to upcoming offline software prototypes.
               </p>
             </div>
-            <div className="mt-6 pt-4 border-t border-deepnavy/5 text-xs text-deepnavy/50 font-mono">
+            <div className="mt-6 pt-4 border-t border-white/10 text-[10px] text-cyan-400 font-mono font-bold tracking-wider">
               METRIC: COHORT STAGE-1 ELIGIBILITY
             </div>
           </div>
@@ -176,45 +176,45 @@ export default function InfoSections() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Card 1 */}
-          <div className="bg-white border border-deepnavy/5 rounded-2xl p-8 shadow-sm flex flex-col justify-between" id="val-card-1">
+          <div className="bg-gradient-to-br from-[#0B1526] to-[#12233F] border border-[#20314d] hover:border-cyanaccent/50 rounded-3xl p-8 hover:shadow-lg transition-all flex flex-col justify-between" id="val-card-1">
             <div>
-              <div className="h-2 w-12 bg-cyanaccent rounded-full mb-6" />
-              <h3 className="font-serif text-lg text-deepnavy font-bold mb-3">
+              <div className="h-1.5 w-16 bg-cyan-400 rounded-full mb-6" />
+              <h3 className="font-serif text-lg md:text-xl text-white font-black tracking-tight mb-3">
                 Can awareness patterns be estimated without in-vehicle monitoring?
               </h3>
-              <p className="text-sm text-deepnavy/70 leading-relaxed font-sans">
+              <p className="text-xs md:text-sm text-slate-200 leading-relaxed font-sans font-semibold">
                 We are validating whether mathematical modeling of driving habits and subjective fatigue scales can form an accurate prediction model without invasive in-car tracking.
               </p>
             </div>
-            <span className="text-xs font-mono text-deepnavy/40 uppercase tracking-widest mt-6 block">Hypothesis 01 // Est. Capability</span>
+            <span className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-black mt-6 block">Hypothesis 01 // Est. Capability</span>
           </div>
 
           {/* Card 2 */}
-          <div className="bg-white border border-deepnavy/5 rounded-2xl p-8 shadow-sm flex flex-col justify-between" id="val-card-2">
+          <div className="bg-gradient-to-br from-[#0B1526] to-[#12233F] border border-[#20314d] hover:border-amberaccent/50 rounded-3xl p-8 hover:shadow-lg transition-all flex flex-col justify-between" id="val-card-2">
             <div>
-              <div className="h-2 w-12 bg-amberaccent rounded-full mb-6" />
-              <h3 className="font-serif text-lg text-deepnavy font-bold mb-3">
+              <div className="h-1.5 w-16 bg-amber-400 rounded-full mb-6" />
+              <h3 className="font-serif text-lg md:text-xl text-white font-black tracking-tight mb-3">
                 Can driving context influence perceived alertness?
               </h3>
-              <p className="text-sm text-deepnavy/70 leading-relaxed font-sans">
+              <p className="text-xs md:text-sm text-slate-200 leading-relaxed font-sans font-semibold">
                 We are mapping how highly localized factors—such as Canadian winter conditions, sub-zero cold, and major highway commuting bottlenecks—disproportionately impact driver response limits.
               </p>
             </div>
-            <span className="text-xs font-mono text-deepnavy/40 uppercase tracking-widest mt-6 block">Hypothesis 02 // Stress Context</span>
+            <span className="text-[10px] font-mono text-amber-400 uppercase tracking-widest font-black mt-6 block">Hypothesis 02 // Stress Context</span>
           </div>
 
           {/* Card 3 */}
-          <div className="bg-white border border-deepnavy/5 rounded-2xl p-8 shadow-sm flex flex-col justify-between" id="val-card-3">
+          <div className="bg-gradient-to-br from-[#0B1526] to-[#12233F] border border-[#20314d] hover:border-cyanaccent/50 rounded-3xl p-8 hover:shadow-lg transition-all flex flex-col justify-between" id="val-card-3">
             <div>
-              <div className="h-2 w-12 bg-cyanaccent rounded-full mb-6" />
-              <h3 className="font-serif text-lg text-deepnavy font-bold mb-3">
+              <div className="h-1.5 w-16 bg-cyan-400 rounded-full mb-6" />
+              <h3 className="font-serif text-lg md:text-xl text-white font-black tracking-tight mb-3">
                 Can privacy-first models provide meaningful insights?
               </h3>
-              <p className="text-sm text-deepnavy/70 leading-relaxed font-sans">
+              <p className="text-xs md:text-sm text-slate-200 leading-relaxed font-sans font-semibold">
                 We are analyzing driver willingness to engage with localized, 100% offline security tools that guarantee absolute insulation from cloud monitoring and third-party trackers.
               </p>
             </div>
-            <span className="text-xs font-mono text-deepnavy/40 uppercase tracking-widest mt-6 block">Hypothesis 03 // Privacy Acceptance</span>
+            <span className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-black mt-6 block">Hypothesis 03 // Privacy Acceptance</span>
           </div>
         </div>
       </section>
@@ -236,51 +236,51 @@ export default function InfoSections() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch" id="preview-container">
           
           {/* Column 1: Sample Questionnaire Box */}
-          <div className="lg:col-span-7 bg-white border border-deepnavy/10 rounded-2xl p-8 flex flex-col justify-between" id="preview-questionnaire-box">
+          <div className="lg:col-span-7 bg-gradient-to-br from-[#0B1526] to-[#12233F] border border-[#20314d] rounded-2xl p-8 flex flex-col justify-between shadow-lg" id="preview-questionnaire-box">
             <div>
-              <div className="flex items-center justify-between pb-4 border-b border-deepnavy/5 mb-6">
+              <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
                 <div className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-cyanaccent animate-pulse" />
-                  <span className="text-xs font-mono text-deepnavy/60 uppercase tracking-wider font-semibold">Active Assessment Simulator</span>
+                  <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
+                  <span className="text-xs font-mono text-slate-300 uppercase tracking-wider font-semibold">Active Assessment Simulator</span>
                 </div>
-                <span className="text-xs font-mono bg-slate-100 text-deepnavy px-2.5 py-0.5 rounded font-medium">Question 3 of 5</span>
+                <span className="text-xs font-mono bg-slate-800 text-white border border-slate-700 px-2.5 py-0.5 rounded font-medium">Question 3 of 5</span>
               </div>
 
               {/* Progress Bar */}
-              <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden mb-6">
-                <div className="w-3/5 h-full bg-cyanaccent rounded-full" />
+              <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden mb-6">
+                <div className="w-3/5 h-full bg-cyan-400 rounded-full" />
               </div>
 
               {/* Question Statement */}
-              <span className="text-xs font-mono text-cyanaccent tracking-wider uppercase font-semibold block mb-2">Subjective Focus Metric</span>
-              <h3 className="font-serif text-xl text-deepnavy font-bold mb-6 leading-snug">
+              <span className="text-xs font-mono text-cyan-400 tracking-wider uppercase font-semibold block mb-2">Subjective Focus Metric</span>
+              <h3 className="font-serif text-xl text-white font-bold mb-6 leading-snug">
                 "When experiencing persistent cognitive fatigue on a Canadian highway, what is your primary response pattern?"
               </h3>
 
               {/* Multiple Choice Options */}
               <div className="space-y-3">
-                <div className="flex items-center gap-3 p-3.5 border border-deepnavy/10 rounded-xl bg-slate-50/50">
-                  <div className="h-5 w-5 rounded-full border-2 border-deepnavy/20 flex items-center justify-center shrink-0">
+                <div className="flex items-center gap-3 p-3.5 border border-[#20314d] rounded-xl bg-[#09101c]/50">
+                  <div className="h-5 w-5 rounded-full border-2 border-slate-600 flex items-center justify-center shrink-0">
                     <div className="h-2.5 w-2.5 rounded-full bg-transparent" />
                   </div>
-                  <span className="text-xs font-medium text-deepnavy/80 font-sans">I rely heavily on radio/audio stimulation to force focus (Active Compensation).</span>
+                  <span className="text-xs font-medium text-slate-200 font-sans">I rely heavily on radio/audio stimulation to force focus (Active Compensation).</span>
                 </div>
-                <div className="flex items-center gap-3 p-3.5 border border-cyanaccent/30 rounded-xl bg-cyanaccent/[0.02]">
-                  <div className="h-5 w-5 rounded-full border-2 border-cyanaccent flex items-center justify-center shrink-0">
-                    <div className="h-2.5 w-2.5 rounded-full bg-cyanaccent" />
+                <div className="flex items-center gap-3 p-3.5 border border-cyan-400 rounded-xl bg-cyan-950/30">
+                  <div className="h-5 w-5 rounded-full border-2 border-cyan-400 flex items-center justify-center shrink-0">
+                    <div className="h-2.5 w-2.5 rounded-full bg-cyan-400" />
                   </div>
-                  <span className="text-xs font-semibold text-deepnavy font-sans">I attempt to accelerate slightly to heighten adrenaline (Aggressive Risk).</span>
+                  <span className="text-xs font-semibold text-white font-sans">I attempt to accelerate slightly to heighten adrenaline (Aggressive Risk).</span>
                 </div>
-                <div className="flex items-center gap-3 p-3.5 border border-deepnavy/10 rounded-xl bg-slate-50/50">
-                  <div className="h-5 w-5 rounded-full border-2 border-deepnavy/20 flex items-center justify-center shrink-0">
+                <div className="flex items-center gap-3 p-3.5 border border-[#20314d] rounded-xl bg-[#09101c]/50">
+                  <div className="h-5 w-5 rounded-full border-2 border-slate-600 flex items-center justify-center shrink-0">
                     <div className="h-2.5 w-2.5 rounded-full bg-transparent" />
                   </div>
-                  <span className="text-xs font-medium text-deepnavy/80 font-sans">I seek a designated rest stop or pull over immediately (Safe Baseline).</span>
+                  <span className="text-xs font-medium text-slate-200 font-sans">I seek a designated rest stop or pull over immediately (Safe Baseline).</span>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 pt-4 border-t border-deepnavy/5 flex items-center justify-between text-[10px] text-deepnavy/40 font-mono">
+            <div className="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-[10px] text-slate-400 font-mono">
               <span>EXPLORATORY METRIC: ATTENTION_STABILITY_V3</span>
               <span>EST. PROCESSING TIME: ~12ms</span>
             </div>
@@ -469,12 +469,12 @@ function WorkflowExplorer() {
                 className={`w-full text-left p-4 rounded-2xl border transition-all flex items-center gap-4 cursor-pointer focus:outline-none ${
                   isActive
                     ? "bg-cyanaccent text-white border-cyanaccent shadow-md translate-x-1"
-                    : "bg-slate-50 text-deepnavy border-deepnavy/10 hover:border-cyanaccent/30 hover:bg-slate-100/50"
+                    : "bg-[#0B1526] text-white border-[#20314d] hover:border-cyanaccent/30 hover:bg-[#12233F]"
                 }`}
                 id={`workflow-tab-${idx}`}
               >
                 <div className={`h-10 w-10 rounded-xl flex items-center justify-center font-mono text-lg shrink-0 ${
-                  isActive ? "bg-white/20 text-white" : "bg-cyanaccent/10 text-cyanaccent"
+                  isActive ? "bg-white/20 text-white" : "bg-cyan-950/40 text-cyan-400 border border-cyan-800/40"
                 }`}>
                   {idx + 1}
                 </div>
@@ -482,7 +482,7 @@ function WorkflowExplorer() {
                   <h4 className="font-serif font-black text-sm tracking-tight">
                     {step.shortTitle}
                   </h4>
-                  <p className={`text-[10px] mt-0.5 ${isActive ? "text-white/80" : "text-deepnavy/50"}`}>
+                  <p className={`text-[10px] mt-0.5 ${isActive ? "text-white/80" : "text-slate-400"}`}>
                     {step.label}
                   </p>
                 </div>
@@ -491,32 +491,32 @@ function WorkflowExplorer() {
           })}
         </div>
 
-        <div className="mt-6 p-4 bg-slate-50 border border-deepnavy/10 rounded-2xl hidden lg:block">
-          <p className="text-[10px] text-deepnavy/60 font-sans leading-relaxed">
+        <div className="mt-6 p-4 bg-[#0B1526] border border-[#20314d] rounded-2xl hidden lg:block">
+          <p className="text-[10px] text-slate-400 font-sans leading-relaxed">
             *This timeline operates fully within a non-commercial framework. Every phase is designed to establish scientific feasibility while respecting participant sovereignty.
           </p>
         </div>
       </div>
 
       {/* Main Panel: Step Details (Dynamic Content) */}
-      <div className="lg:col-span-8 bg-slate-50 border border-deepnavy/10 rounded-2xl p-6 md:p-8 flex flex-col justify-between" id="workflow-detail-panel">
+      <div className="lg:col-span-8 bg-[#0B1526] border border-[#20314d] rounded-2xl p-6 md:p-8 flex flex-col justify-between shadow-lg" id="workflow-detail-panel">
         <div>
           {/* Header */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-deepnavy/10 mb-6">
+          <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-white/10 mb-6">
             <div className="flex items-center gap-2">
               <span className="text-2xl" role="img" aria-label="Step icon">
                 {steps[activeStep].icon}
               </span>
               <div>
-                <span className="text-[10px] font-mono font-black text-cyanaccent uppercase block">
+                <span className="text-[10px] font-mono font-black text-cyan-400 uppercase block">
                   {steps[activeStep].label}
                 </span>
-                <h3 className="font-serif text-xl md:text-2xl text-deepnavy font-black tracking-tight mt-0.5">
+                <h3 className="font-serif text-xl md:text-2xl text-white font-black tracking-tight mt-0.5">
                   {steps[activeStep].tagline}
                 </h3>
               </div>
             </div>
-            <span className="text-xs bg-cyanaccent/10 text-cyanaccent border border-cyanaccent/20 px-3 py-1 rounded-full font-mono font-black">
+            <span className="text-xs bg-cyan-950/40 text-cyan-400 border border-cyan-800/40 px-3 py-1 rounded-full font-mono font-black">
               ACTIVE RESEARCH STEP
             </span>
           </div>
@@ -524,33 +524,33 @@ function WorkflowExplorer() {
           {/* Description & Scientific Justification */}
           <div className="space-y-6">
             <div className="space-y-2">
-              <h5 className="text-xs font-mono font-bold text-deepnavy/50 uppercase tracking-widest">
+              <h5 className="text-xs font-mono font-bold text-slate-400 uppercase tracking-widest">
                 Phase Overview
               </h5>
-              <p className="text-sm md:text-base text-deepnavy/80 font-sans leading-relaxed">
+              <p className="text-sm md:text-base text-slate-200 font-sans leading-relaxed">
                 {steps[activeStep].overview}
               </p>
             </div>
 
-            <div className="space-y-2 p-5 bg-white border border-deepnavy/10 rounded-2xl">
-              <h5 className="text-xs font-mono font-black text-cyanaccent uppercase tracking-widest flex items-center gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-cyanaccent" />
+            <div className="space-y-2 p-5 bg-[#12233F] border border-[#20314d] rounded-2xl">
+              <h5 className="text-xs font-mono font-black text-cyan-400 uppercase tracking-widest flex items-center gap-1.5">
+                <span className="h-2 w-2 rounded-full bg-cyan-400" />
                 Scientific Goal & Hypothesis
               </h5>
-              <p className="text-xs md:text-sm text-deepnavy/80 font-sans leading-relaxed italic">
+              <p className="text-xs md:text-sm text-slate-300 font-sans leading-relaxed italic">
                 "{steps[activeStep].scientificGoal}"
               </p>
             </div>
 
             {/* Technical Parameter Checklist */}
             <div className="space-y-2">
-              <h5 className="text-xs font-mono font-bold text-deepnavy/50 uppercase tracking-widest">
+              <h5 className="text-xs font-mono font-bold text-slate-400 uppercase tracking-widest">
                 Technical Security Parameters
               </h5>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {steps[activeStep].technicalDetails.map((detail, dIdx) => (
-                  <li key={dIdx} className="flex gap-2 items-start text-xs text-deepnavy/80 font-semibold bg-white border border-deepnavy/5 p-3 rounded-xl shadow-xs">
-                    <span className="text-emerald-500 font-bold">✓</span>
+                  <li key={dIdx} className="flex gap-2 items-start text-xs text-slate-200 font-semibold bg-[#12233F] border border-[#20314d] p-3 rounded-xl shadow-xs">
+                    <span className="text-emerald-400 font-bold">✓</span>
                     <span>{detail}</span>
                   </li>
                 ))}
@@ -560,7 +560,7 @@ function WorkflowExplorer() {
         </div>
 
         {/* Footer info line */}
-        <div className="mt-8 pt-4 border-t border-deepnavy/10 flex items-center justify-between text-[10px] text-deepnavy/40 font-mono">
+        <div className="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-[10px] text-slate-400 font-mono">
           <span>{steps[activeStep].metricLabel}</span>
           <span className="hidden sm:inline">PROCESSING MODEL: SECURE_SANDBOX_ST_0{activeStep + 1}</span>
         </div>
