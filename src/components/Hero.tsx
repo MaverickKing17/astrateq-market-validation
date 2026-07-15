@@ -4,7 +4,7 @@
  */
 
 import React from "react";
-import { ShieldAlert, ShieldCheck, Cpu, Clock, Smartphone, ChevronRight } from "lucide-react";
+import { ShieldAlert, ShieldCheck, Cpu, Clock, Smartphone, ChevronRight, Zap, Eye, Brain, Activity, ChevronDown } from "lucide-react";
 
 interface HeroProps {
   onStartSimulation: () => void;
@@ -103,95 +103,186 @@ export default function Hero({ onStartSimulation }: HeroProps) {
             <div className="absolute -inset-1.5 bg-gradient-to-tr from-cyanaccent/20 to-amberaccent/20 rounded-[50px] blur-xl opacity-80" />
             
             {/* Phone Hardware Case */}
-            <div className="relative w-full aspect-[9/19] bg-slate-950 border-[10px] border-slate-900 rounded-[48px] shadow-2xl overflow-hidden flex flex-col p-1">
+            <div className="relative w-full aspect-[9/19] bg-slate-950 border-[10px] border-slate-900 rounded-[48px] shadow-[0_25px_60px_-15px_rgba(3,7,18,0.7)] overflow-hidden flex flex-col p-1.5 ring-1 ring-white/10">
               
               {/* Dynamic Island / Speaker notch */}
-              <div className="absolute top-2 left-1/2 -translate-x-1/2 w-28 h-4 bg-black rounded-full z-30 flex items-center justify-center">
-                <div className="w-2 h-2 rounded-full bg-slate-900/60 ml-auto mr-4" />
+              <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-28 h-4.5 bg-black rounded-full z-30 flex items-center justify-center">
+                <div className="w-1.5 h-1.5 rounded-full bg-slate-900/80 ml-auto mr-4" />
               </div>
 
               {/* Screen Content - Dark UI Representing App State */}
-              <div className="flex-1 bg-[#0B1525] rounded-[38px] overflow-hidden flex flex-col pt-7 px-5 pb-5 text-slate-100 select-none">
+              <div className="flex-1 bg-gradient-to-b from-[#070d1a] via-[#09152b] to-[#040811] rounded-[38px] overflow-hidden flex flex-col pt-8 px-4 pb-4 text-slate-100 select-none relative">
                 
+                {/* Tech background grid and glows */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
+                <div className="absolute top-1/4 -left-12 w-48 h-48 bg-cyanaccent/80 rounded-full blur-[70px] opacity-10 pointer-events-none" />
+                <div className="absolute bottom-1/4 -right-12 w-48 h-48 bg-emerald-500/80 rounded-full blur-[70px] opacity-10 pointer-events-none" />
+                
+                {/* Embedded Waveform Graphic in Background layer (behind cards) */}
+                <div className="absolute inset-x-0 bottom-24 h-24 opacity-15 pointer-events-none mix-blend-screen filter blur-[0.5px]">
+                  <svg className="w-full h-full stroke-cyanaccent fill-none" viewBox="0 0 100 40" preserveAspectRatio="none">
+                    <path d="M0,25 Q10,15 20,30 T40,10 T60,35 T80,15 T100,25" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M0,25 Q10,15 20,30 T40,10 T60,35 T80,15 T100,25" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="opacity-40 blur-[2px]" />
+                  </svg>
+                </div>
+
                 {/* Mock App Header */}
-                <div className="flex items-center justify-between pb-4 border-b border-slate-800/60">
+                <div className="flex items-center justify-between pb-3.5 border-b border-white/[0.06] relative z-10">
                   <div className="flex items-center gap-1.5">
-                    <ShieldCheck className="h-4 w-4 text-cyanaccent" />
-                    <span className="font-serif text-xs font-bold tracking-tight text-white">Astrateq Gadgets <span className="text-[8px] uppercase tracking-wider font-sans font-medium text-cyanaccent">Driver</span></span>
+                    <ShieldCheck className="h-4 w-4 text-cyanaccent animate-pulse" />
+                    <span className="font-serif text-xs font-black tracking-tight text-white">Astrateq Gadgets <span className="text-[8px] uppercase tracking-wider font-sans font-extrabold text-cyanaccent">Driver</span></span>
                   </div>
-                  <div className="flex flex-col gap-0.5 items-end">
-                    <div className="w-3.5 h-0.5 bg-slate-400 rounded-full" />
-                    <div className="w-3.5 h-0.5 bg-slate-400 rounded-full" />
+                  <div className="flex items-center gap-2">
+                    <span className="text-[8px] font-mono font-bold text-cyanaccent bg-cyanaccent/15 px-1.5 py-0.5 rounded uppercase tracking-widest border border-cyanaccent/30">Offline</span>
+                    <div className="flex flex-col gap-0.5 items-end opacity-60">
+                      <div className="w-3.5 h-0.5 bg-white rounded-full" />
+                      <div className="w-3.5 h-0.5 bg-white rounded-full" />
+                    </div>
                   </div>
                 </div>
 
                 {/* Score Circular Dial Section */}
-                <div className="flex-1 flex flex-col items-center justify-center py-6">
-                  <span className="text-[10px] font-mono tracking-wider text-slate-400 uppercase mb-2">
-                    Your Driver Awareness Score
+                <div className="flex-1 flex flex-col items-center justify-center py-4 relative z-10">
+                  <span className="text-[8.5px] font-mono tracking-[0.18em] text-slate-400 uppercase mb-3.5 font-light">
+                    YOUR DRIVER AWARENESS SCORE
                   </span>
                   
                   {/* Gauge Ring Visual */}
-                  <div className="relative w-40 h-40 flex items-center justify-center">
-                    <svg className="absolute inset-0 w-full h-full -rotate-90">
-                      {/* Trail path */}
-                      <circle cx="80" cy="80" r="70" stroke="#1E293B" strokeWidth="8" fill="transparent" />
-                      {/* Active path */}
+                  <div className="relative w-36 h-36 flex items-center justify-center">
+                    {/* Background Soft Glow */}
+                    <div className="absolute inset-4 rounded-full bg-gradient-to-tr from-cyan-500/15 to-emerald-500/15 blur-xl pointer-events-none" />
+                    
+                    <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 160 160">
+                      {/* Trail path (3D deep channel slot) */}
+                      <circle cx="80" cy="80" r="68" stroke="#0a1224" strokeWidth="10" fill="transparent" />
+                      <circle cx="80" cy="80" r="68" stroke="#121f38" strokeWidth="8" fill="transparent" />
+                      
+                      {/* Blur Glow behind the active indicator for neon effect */}
                       <circle 
-                        cx="80" cy="80" r="70" 
-                        stroke="url(#cyan-gradient)" 
-                        strokeWidth="8" 
-                        strokeDasharray="440" 
-                        strokeDashoffset="84" /* (1 - 0.81) * 440 */
+                        cx="80" cy="80" r="68" 
+                        stroke="url(#cyan-glow-gradient)" 
+                        strokeWidth="14" 
+                        strokeDasharray="427" 
+                        strokeDashoffset="81" /* (1 - 0.81) * 427 */
                         strokeLinecap="round" 
                         fill="transparent" 
+                        className="opacity-50 blur-[6px]"
                       />
+
+                      {/* Crisp Active path with gradient fill */}
+                      <circle 
+                        cx="80" cy="80" r="68" 
+                        stroke="url(#cyan-glow-gradient)" 
+                        strokeWidth="8" 
+                        strokeDasharray="427" 
+                        strokeDashoffset="81" 
+                        strokeLinecap="round" 
+                        fill="transparent" 
+                        className="drop-shadow-[0_0_4px_rgba(6,182,212,0.5)]"
+                      />
+
                       <defs>
-                        <linearGradient id="cyan-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor="#0E7C9E" />
-                          <stop offset="100%" stopColor="#10B981" />
+                        <linearGradient id="cyan-glow-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="#06b6d4" />
+                          <stop offset="60%" stopColor="#0ea5e9" />
+                          <stop offset="100%" stopColor="#10b981" />
                         </linearGradient>
                       </defs>
                     </svg>
                     
                     {/* Inner Content */}
-                    <div className="text-center">
-                      <span className="block font-serif text-5xl font-black text-white leading-none">81</span>
-                      <span className="inline-block mt-1 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
-                        Good
+                    <div className="text-center z-10">
+                      <span className="block font-serif text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-50 to-cyan-200 drop-shadow-[0_4px_16px_rgba(6,182,212,0.5)] leading-none select-none">
+                        81
+                      </span>
+                      <span className="inline-flex mt-2 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[9px] font-extrabold uppercase tracking-widest shadow-[0_0_12px_rgba(16,185,129,0.3)] backdrop-blur-sm">
+                        ● Good
                       </span>
                     </div>
                   </div>
 
-                  <p className="text-[11px] text-slate-300 text-center mt-3 max-w-[180px] font-sans">
+                  <p className="text-[10px] text-slate-300 text-center mt-3 max-w-[190px] font-sans font-medium tracking-wide">
                     Keep it up. Stay consistent.
                   </p>
                 </div>
 
-                {/* Simulated Metrics Column */}
-                <div className="space-y-2 pb-4">
-                  <div className="flex items-center justify-between p-2.5 bg-slate-900/50 rounded-xl border border-slate-800/40">
-                    <span className="text-xs font-medium text-slate-400">Fatigue Risk</span>
-                    <span className="text-xs font-bold text-emerald-400">Low</span>
+                {/* Simulated Metrics Column - Premium Glassmorphism UI cards */}
+                <div className="space-y-2 pb-4 relative z-10">
+                  
+                  {/* Card 1 */}
+                  <div className="flex items-center justify-between p-3 backdrop-blur-xl bg-gradient-to-br from-white/[0.06] to-white/[0.01] border-t border-l border-cyanaccent/20 border-r border-b border-white/[0.03] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.45)] transition-all duration-300 hover:border-cyanaccent/35 hover:bg-white/[0.08]">
+                    <div className="flex items-center gap-2.5">
+                      <div className="p-1.5 bg-cyanaccent/15 text-cyanaccent rounded-lg border border-cyanaccent/25 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">
+                        <Zap className="h-3.5 w-3.5 drop-shadow-[0_0_2px_rgba(14,124,158,0.5)]" />
+                      </div>
+                      <div className="flex flex-col text-left">
+                        <span className="text-[10.5px] font-bold text-slate-100 font-sans tracking-wide leading-tight">FATIGUE RISK</span>
+                        <span className="text-[8px] text-slate-400 font-sans font-medium leading-none mt-0.5">Physical & mental fatigue index</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-[9px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded-full shadow-[0_0_8px_rgba(16,185,129,0.2)] font-mono">Low</span>
+                      <ChevronDown className="h-3 w-3 text-slate-400 opacity-60" />
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between p-2.5 bg-slate-900/50 rounded-xl border border-slate-800/40">
-                    <span className="text-xs font-medium text-slate-400">Attention Stability</span>
-                    <span className="text-xs font-bold text-emerald-400">Good</span>
+
+                  {/* Card 2 */}
+                  <div className="flex items-center justify-between p-3 backdrop-blur-xl bg-gradient-to-br from-white/[0.06] to-white/[0.01] border-t border-l border-cyanaccent/20 border-r border-b border-white/[0.03] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.45)] transition-all duration-300 hover:border-cyanaccent/35 hover:bg-white/[0.08]">
+                    <div className="flex items-center gap-2.5">
+                      <div className="p-1.5 bg-cyanaccent/15 text-cyanaccent rounded-lg border border-cyanaccent/25 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">
+                        <Eye className="h-3.5 w-3.5 drop-shadow-[0_0_2px_rgba(14,124,158,0.5)]" />
+                      </div>
+                      <div className="flex flex-col text-left">
+                        <span className="text-[10.5px] font-bold text-slate-100 font-sans tracking-wide leading-tight">ATTENTION STABILITY</span>
+                        <span className="text-[8px] text-slate-400 font-sans font-medium leading-none mt-0.5">Focus persistence scale</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-[9px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded-full shadow-[0_0_8px_rgba(16,185,129,0.2)] font-mono">Good</span>
+                      <ChevronDown className="h-3 w-3 text-slate-400 opacity-60" />
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between p-2.5 bg-slate-900/50 rounded-xl border border-slate-800/40">
-                    <span className="text-xs font-medium text-slate-400">Cognitive Load</span>
-                    <span className="text-xs font-bold text-amberaccent">Moderate</span>
+
+                  {/* Card 3 */}
+                  <div className="flex items-center justify-between p-3 backdrop-blur-xl bg-gradient-to-br from-white/[0.06] to-white/[0.01] border-t border-l border-cyanaccent/20 border-r border-b border-white/[0.03] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.45)] transition-all duration-300 hover:border-cyanaccent/35 hover:bg-white/[0.08]">
+                    <div className="flex items-center gap-2.5">
+                      <div className="p-1.5 bg-amber-500/15 text-amberaccent rounded-lg border border-amberaccent/25 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">
+                        <Brain className="h-3.5 w-3.5 drop-shadow-[0_0_2px_rgba(184,134,11,0.5)]" />
+                      </div>
+                      <div className="flex flex-col text-left">
+                        <span className="text-[10.5px] font-bold text-slate-100 font-sans tracking-wide leading-tight">COGNITIVE LOAD</span>
+                        <span className="text-[8px] text-slate-400 font-sans font-medium leading-none mt-0.5">Heuristic task stress load</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-[9px] font-bold text-amberaccent bg-amber-500/10 border border-amber-500/30 px-2 py-0.5 rounded-full shadow-[0_0_8px_rgba(184,134,11,0.2)] font-mono">Moderate</span>
+                      <ChevronDown className="h-3 w-3 text-slate-400 opacity-60" />
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between p-2.5 bg-slate-900/50 rounded-xl border border-slate-800/40">
-                    <span className="text-xs font-medium text-slate-400">Environmental Complexity</span>
-                    <span className="text-xs font-bold text-emerald-400">Low</span>
+
+                  {/* Card 4 */}
+                  <div className="flex items-center justify-between p-3 backdrop-blur-xl bg-gradient-to-br from-white/[0.06] to-white/[0.01] border-t border-l border-cyanaccent/20 border-r border-b border-white/[0.03] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.45)] transition-all duration-300 hover:border-cyanaccent/35 hover:bg-white/[0.08]">
+                    <div className="flex items-center gap-2.5">
+                      <div className="p-1.5 bg-cyanaccent/15 text-cyanaccent rounded-lg border border-cyanaccent/25 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">
+                        <Activity className="h-3.5 w-3.5 drop-shadow-[0_0_2px_rgba(14,124,158,0.5)]" />
+                      </div>
+                      <div className="flex flex-col text-left">
+                        <span className="text-[10.5px] font-bold text-slate-100 font-sans tracking-wide leading-tight">ENVIRONMENTAL FACTOR</span>
+                        <span className="text-[8px] text-slate-400 font-sans font-medium leading-none mt-0.5">Contextual difficulty multiplier</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-[9px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded-full shadow-[0_0_8px_rgba(16,185,129,0.2)] font-mono">Low</span>
+                      <ChevronDown className="h-3 w-3 text-slate-400 opacity-60" />
+                    </div>
                   </div>
+
                 </div>
 
                 {/* Simulated output disclaimer locked strictly inside screen visual */}
-                <div className="border-t border-slate-800/60 pt-3 text-center">
-                  <p className="text-[8px] uppercase tracking-widest text-slate-500 font-semibold font-mono leading-normal">
-                    Simulated Output — Conceptual Behavioral Model, Not Real-World Measurement
+                <div className="border-t border-white/[0.06] pt-3.5 text-center relative z-10">
+                  <p className="text-[7.5px] uppercase tracking-widest text-slate-500 font-bold font-mono leading-normal">
+                    SIMULATED CONCEPTUAL INTERFACE — 100% OFFLINE
                   </p>
                 </div>
 

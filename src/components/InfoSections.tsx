@@ -331,55 +331,82 @@ export default function InfoSections() {
           </div>
 
           {/* Column 2: Simulated Output Dashboard Preview */}
-          <div className="lg:col-span-5 bg-deepnavy text-white rounded-2xl p-8 flex flex-col justify-between" id="preview-dashboard-box">
-            <div>
-              <div className="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
-                <span className="text-[10px] font-mono tracking-wider uppercase text-slate-400">Simulation Output Report</span>
-                <span className="px-2 py-0.5 text-[9px] font-mono font-bold bg-cyanaccent/15 text-cyanaccent rounded uppercase tracking-wider">Estimated Model</span>
+          <div className="lg:col-span-5 bg-gradient-to-b from-[#070d1a] via-[#09152b] to-[#040811] text-white rounded-2xl p-8 flex flex-col justify-between border border-cyanaccent/20 shadow-[0_20px_50px_rgba(3,7,18,0.5)] relative overflow-hidden" id="preview-dashboard-box">
+            
+            {/* Ambient glows behind */}
+            <div className="absolute top-1/4 -left-12 w-32 h-32 bg-cyanaccent/20 rounded-full blur-[40px] pointer-events-none" />
+            <div className="absolute bottom-1/4 -right-12 w-32 h-32 bg-emerald-500/20 rounded-full blur-[40px] pointer-events-none" />
+
+            <div className="relative z-10">
+              <div className="flex items-center justify-between pb-4 border-b border-white/[0.06] mb-6">
+                <span className="text-[10px] font-mono tracking-widest uppercase text-slate-400">Simulation Output Report</span>
+                <span className="px-2.5 py-0.5 text-[9px] font-mono font-bold bg-cyanaccent/15 border border-cyanaccent/30 text-cyanaccent rounded-full uppercase tracking-wider">Estimated Model</span>
               </div>
 
               {/* Large Score Circle Mock */}
               <div className="flex flex-col items-center py-4">
-                <div className="relative h-28 w-28 rounded-full border-4 border-slate-800 flex items-center justify-center mb-4">
-                  {/* Arc simulation */}
-                  <div className="absolute inset-0 rounded-full border-4 border-t-cyanaccent border-r-cyanaccent border-b-transparent border-l-transparent -m-1 rotate-45" />
-                  <div className="text-center">
-                    <span className="block font-serif text-3xl font-black leading-none">81</span>
-                    <span className="text-[8px] uppercase tracking-widest text-emerald-400 font-bold block mt-1">Good</span>
+                <div className="relative h-32 w-32 rounded-full flex items-center justify-center mb-4">
+                  {/* Background Soft Glow */}
+                  <div className="absolute inset-2 rounded-full bg-cyan-500/10 blur-md" />
+                  
+                  <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="44" stroke="#0e172a" strokeWidth="6" fill="transparent" />
+                    <circle cx="50" cy="50" r="44" stroke="#102a45" strokeWidth="5" fill="transparent" />
+                    
+                    {/* Active neon arc */}
+                    <circle 
+                      cx="50" cy="50" r="44" 
+                      stroke="#06b6d4" 
+                      strokeWidth="5.5" 
+                      strokeDasharray="276" 
+                      strokeDashoffset="52" /* (1 - 0.81) * 276 */
+                      strokeLinecap="round" 
+                      fill="transparent" 
+                      className="drop-shadow-[0_0_6px_rgba(6,182,212,0.6)]"
+                    />
+                  </svg>
+                  
+                  <div className="text-center z-10">
+                    <span className="block font-serif text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-50 to-cyan-100 drop-shadow-[0_2px_10px_rgba(6,182,212,0.5)] leading-none">81</span>
+                    <span className="inline-block px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[8px] font-extrabold uppercase tracking-widest mt-1.5 shadow-[0_0_8px_rgba(16,185,129,0.25)]">
+                      Good
+                    </span>
                   </div>
                 </div>
-                <h4 className="font-serif text-base font-bold text-slate-200">Driver Awareness Profile</h4>
-                <p className="text-[11px] text-slate-400 font-sans text-center mt-2 max-w-xs leading-relaxed">
+                
+                <h4 className="font-serif text-base font-bold text-white tracking-wide">Driver Awareness Profile</h4>
+                <p className="text-[10.5px] text-slate-300 font-sans text-center mt-2 max-w-xs leading-relaxed">
                   Calculated using custom on-device algorithms simulating regional fatigue risk and temporal focus indexes.
                 </p>
               </div>
 
               {/* Awareness Graph Visual */}
-              <div className="bg-slate-950/60 border border-slate-800/40 rounded-xl p-4 mb-4">
-                <div className="flex items-center justify-between mb-3 text-[10px] font-mono text-slate-400">
+              <div className="bg-slate-950/40 backdrop-blur-md border border-white/[0.06] rounded-xl p-4 mb-4">
+                <div className="flex items-center justify-between mb-2 text-[9px] font-mono tracking-wider text-slate-400">
                   <span>COGNITIVE STABILITY GRAPH</span>
-                  <span className="text-cyanaccent">STABLE // 81%</span>
+                  <span className="text-cyanaccent font-bold">STABLE // 81%</span>
                 </div>
                 {/* Simulated Sparkline Graph with SVG */}
                 <svg className="w-full h-8 stroke-cyanaccent fill-none" viewBox="0 0 100 20">
                   <path d="M0,15 L10,12 L20,18 L30,5 L40,8 L50,14 L60,10 L70,3 L80,12 L90,14 L100,6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M0,15 L10,12 L20,18 L30,5 L40,8 L50,14 L60,10 L70,3 L80,12 L90,14 L100,6" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="opacity-30 blur-[2px]" />
                 </svg>
               </div>
 
               {/* Badges */}
               <div className="grid grid-cols-2 gap-2 text-[10px]">
-                <div className="bg-slate-900 border border-slate-800 rounded-lg p-2 flex items-center gap-1.5">
-                  <ShieldCheck className="h-3.5 w-3.5 text-cyanaccent shrink-0" />
-                  <span className="text-slate-300 font-medium">100% Offline</span>
+                <div className="backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-lg p-2.5 flex items-center gap-2 hover:bg-white/[0.06] transition-all">
+                  <ShieldCheck className="h-4 w-4 text-cyanaccent shrink-0" />
+                  <span className="text-slate-200 font-semibold font-sans">100% Offline</span>
                 </div>
-                <div className="bg-slate-900 border border-slate-800 rounded-lg p-2 flex items-center gap-1.5">
-                  <Award className="h-3.5 w-3.5 text-cyanaccent shrink-0" />
-                  <span className="text-slate-300 font-medium">Cohort Verified</span>
+                <div className="backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-lg p-2.5 flex items-center gap-2 hover:bg-white/[0.06] transition-all">
+                  <Award className="h-4 w-4 text-cyanaccent shrink-0" />
+                  <span className="text-slate-200 font-semibold font-sans">Cohort Verified</span>
                 </div>
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-800 text-center">
+            <div className="mt-6 pt-4 border-t border-white/[0.06] text-center relative z-10">
               <button 
                 onClick={() => {
                   const el = document.getElementById("hero");
@@ -391,7 +418,7 @@ export default function InfoSections() {
                     }, 800);
                   }
                 }}
-                className="w-full bg-cyanaccent hover:bg-cyanaccent/90 text-white font-medium text-xs py-3 rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                className="w-full bg-cyanaccent hover:bg-cyanaccent/90 text-white font-bold text-xs py-3 rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-[0_4px_12px_rgba(14,124,158,0.25)] hover:shadow-[0_4px_20px_rgba(14,124,158,0.4)] hover:-translate-y-0.5"
               >
                 Start 60s Simulation
                 <ArrowRight className="h-3.5 w-3.5" />
