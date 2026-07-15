@@ -398,73 +398,73 @@ export default function SimulationFlow() {
 
                   {/* Right block: Metrics */}
                   <div className="md:col-span-7 space-y-3 relative z-10">
-                    <h4 className="font-serif text-xs font-black tracking-[0.1em] text-white mb-2 uppercase">Metrics Breakdown</h4>
+                    <h4 className="font-serif text-sm font-black tracking-[0.1em] text-white mb-2 uppercase drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">Metrics Breakdown</h4>
                     
                     {/* Fatigue card */}
-                    <div className="flex items-center justify-between p-3.5 backdrop-blur-xl bg-gradient-to-br from-white/[0.05] to-white/[0.01] border-t border-l border-cyanaccent/25 border-r border-b border-white/[0.02] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.4)] transition-all hover:border-cyanaccent/45 hover:bg-white/[0.07]">
+                    <div className="flex items-center justify-between p-3.5 backdrop-blur-xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border-t border-l border-cyanaccent/30 border-r border-b border-white/[0.05] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.55)] transition-all hover:border-cyanaccent/50 hover:bg-white/[0.1]">
                       <div className="flex items-center gap-3">
-                        <div className="p-1.5 bg-cyanaccent/15 text-cyanaccent rounded-lg border border-cyanaccent/20">
-                          <Zap className="h-4 w-4" />
+                        <div className="p-1.5 bg-cyanaccent/20 text-cyanaccent rounded-lg border border-cyanaccent/35 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+                          <Zap className="h-4.5 w-4.5" />
                         </div>
                         <div className="flex flex-col text-left">
-                          <span className="text-[11px] font-bold text-slate-200 font-sans tracking-wide leading-tight">FATIGUE RISK</span>
-                          <span className="text-[8.5px] text-slate-400 font-sans font-medium mt-0.5 leading-none">Physical & mental fatigue index</span>
+                          <span className="text-[13px] font-extrabold text-white font-sans tracking-wide leading-tight">FATIGUE RISK</span>
+                          <span className="text-[11px] text-slate-200 font-sans font-semibold leading-normal mt-0.5">Physical & mental fatigue index</span>
                         </div>
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <span className="text-[9.5px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-2.5 py-0.5 rounded-full font-mono shadow-[0_0_8px_rgba(16,185,129,0.15)]">Low</span>
-                        <ChevronDown className="h-3.5 w-3.5 text-slate-400 opacity-60" />
+                        <span className="text-[10.5px] font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-2.5 py-0.5 rounded-full font-mono shadow-[0_0_8px_rgba(16,185,129,0.25)]">Low</span>
+                        <ChevronDown className="h-4 w-4 text-slate-300" />
                       </div>
                     </div>
 
                     {/* Attention card */}
-                    <div className="flex items-center justify-between p-3.5 backdrop-blur-xl bg-gradient-to-br from-white/[0.05] to-white/[0.01] border-t border-l border-cyanaccent/25 border-r border-b border-white/[0.02] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.4)] transition-all hover:border-cyanaccent/45 hover:bg-white/[0.07]">
+                    <div className="flex items-center justify-between p-3.5 backdrop-blur-xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border-t border-l border-cyanaccent/30 border-r border-b border-white/[0.05] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.55)] transition-all hover:border-cyanaccent/50 hover:bg-white/[0.1]">
                       <div className="flex items-center gap-3">
-                        <div className="p-1.5 bg-cyanaccent/15 text-cyanaccent rounded-lg border border-cyanaccent/20">
-                          <Eye className="h-4 w-4" />
+                        <div className="p-1.5 bg-cyanaccent/20 text-cyanaccent rounded-lg border border-cyanaccent/35 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+                          <Eye className="h-4.5 w-4.5" />
                         </div>
                         <div className="flex flex-col text-left">
-                          <span className="text-[11px] font-bold text-slate-200 font-sans tracking-wide leading-tight">ATTENTION STABILITY</span>
-                          <span className="text-[8.5px] text-slate-400 font-sans font-medium mt-0.5 leading-none">Focus persistence scale</span>
+                          <span className="text-[13px] font-extrabold text-white font-sans tracking-wide leading-tight">ATTENTION STABILITY</span>
+                          <span className="text-[11px] text-slate-200 font-sans font-semibold leading-normal mt-0.5">Focus persistence scale</span>
                         </div>
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <span className="text-[9.5px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-2.5 py-0.5 rounded-full font-mono shadow-[0_0_8px_rgba(16,185,129,0.15)]">Good</span>
-                        <ChevronDown className="h-3.5 w-3.5 text-slate-400 opacity-60" />
+                        <span className="text-[10.5px] font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-2.5 py-0.5 rounded-full font-mono shadow-[0_0_8px_rgba(16,185,129,0.25)]">Good</span>
+                        <ChevronDown className="h-4 w-4 text-slate-300" />
                       </div>
                     </div>
 
                     {/* Cognitive Load card */}
-                    <div className="flex items-center justify-between p-3.5 backdrop-blur-xl bg-gradient-to-br from-white/[0.05] to-white/[0.01] border-t border-l border-cyanaccent/25 border-r border-b border-white/[0.02] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.4)] transition-all hover:border-cyanaccent/45 hover:bg-white/[0.07]">
+                    <div className="flex items-center justify-between p-3.5 backdrop-blur-xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border-t border-l border-cyanaccent/30 border-r border-b border-white/[0.05] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.55)] transition-all hover:border-cyanaccent/50 hover:bg-white/[0.1]">
                       <div className="flex items-center gap-3">
-                        <div className="p-1.5 bg-amber-500/15 text-amberaccent rounded-lg border border-amberaccent/20">
-                          <Brain className="h-4 w-4" />
+                        <div className="p-1.5 bg-amber-500/20 text-amberaccent rounded-lg border border-amberaccent/35 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+                          <Brain className="h-4.5 w-4.5" />
                         </div>
                         <div className="flex flex-col text-left">
-                          <span className="text-[11px] font-bold text-slate-200 font-sans tracking-wide leading-tight">COGNITIVE LOAD</span>
-                          <span className="text-[8.5px] text-slate-400 font-sans font-medium mt-0.5 leading-none">Heuristic task stress load</span>
+                          <span className="text-[13px] font-extrabold text-white font-sans tracking-wide leading-tight">COGNITIVE LOAD</span>
+                          <span className="text-[11px] text-slate-200 font-sans font-semibold leading-normal mt-0.5">Heuristic task stress load</span>
                         </div>
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <span className="text-[9.5px] font-bold text-amberaccent bg-amber-500/10 border border-amber-500/25 px-2.5 py-0.5 rounded-full font-mono shadow-[0_0_8px_rgba(184,134,11,0.15)]">Moderate</span>
-                        <ChevronDown className="h-3.5 w-3.5 text-slate-400 opacity-60" />
+                        <span className="text-[10.5px] font-bold text-amber-300 bg-amber-500/20 border border-amberaccent/40 px-2.5 py-0.5 rounded-full font-mono shadow-[0_0_8px_rgba(184,134,11,0.25)]">Moderate</span>
+                        <ChevronDown className="h-4 w-4 text-slate-300" />
                       </div>
                     </div>
 
                     {/* Environmental card */}
-                    <div className="flex items-center justify-between p-3.5 backdrop-blur-xl bg-gradient-to-br from-white/[0.05] to-white/[0.01] border-t border-l border-cyanaccent/25 border-r border-b border-white/[0.02] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.4)] transition-all hover:border-cyanaccent/45 hover:bg-white/[0.07]">
+                    <div className="flex items-center justify-between p-3.5 backdrop-blur-xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border-t border-l border-cyanaccent/30 border-r border-b border-white/[0.05] rounded-xl shadow-[0_8px_32px_0_rgba(2,10,25,0.55)] transition-all hover:border-cyanaccent/50 hover:bg-white/[0.1]">
                       <div className="flex items-center gap-3">
-                        <div className="p-1.5 bg-cyanaccent/15 text-cyanaccent rounded-lg border border-cyanaccent/20">
-                          <Activity className="h-4 w-4" />
+                        <div className="p-1.5 bg-cyanaccent/20 text-cyanaccent rounded-lg border border-cyanaccent/35 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]">
+                          <Activity className="h-4.5 w-4.5" />
                         </div>
                         <div className="flex flex-col text-left">
-                          <span className="text-[11px] font-bold text-slate-200 font-sans tracking-wide leading-tight">ENVIRONMENTAL FACTOR</span>
-                          <span className="text-[8.5px] text-slate-400 font-sans font-medium mt-0.5 leading-none">Contextual difficulty multiplier</span>
+                          <span className="text-[13px] font-extrabold text-white font-sans tracking-wide leading-tight">ENVIRONMENTAL FACTOR</span>
+                          <span className="text-[11px] text-slate-200 font-sans font-semibold leading-normal mt-0.5">Contextual difficulty multiplier</span>
                         </div>
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <span className="text-[9.5px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-2.5 py-0.5 rounded-full font-mono shadow-[0_0_8px_rgba(16,185,129,0.15)]">Low</span>
-                        <ChevronDown className="h-3.5 w-3.5 text-slate-400 opacity-60" />
+                        <span className="text-[10.5px] font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-2.5 py-0.5 rounded-full font-mono shadow-[0_0_8px_rgba(16,185,129,0.25)]">Low</span>
+                        <ChevronDown className="h-4 w-4 text-slate-300" />
                       </div>
                     </div>
 
