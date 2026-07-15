@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "DM Serif Display", serif;
+  
+  --color-pearl: #F4F2ED;
+  --color-deepnavy: #12233F;
+  --color-cyanaccent: #0E7C9E;
+  --color-amberaccent: #B8860B;
+}
+
+body {
+  background-color: var(--color-pearl);
+  color: var(--color-deepnavy);
+  font-family: var(--font-sans);
+}
+
+/* Custom scrollbar for better visual integration with the brand */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-pearl);
+}
+::-webkit-scrollbar-thumb {
+  background: #d1cfc9;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-cyanaccent);
+}
