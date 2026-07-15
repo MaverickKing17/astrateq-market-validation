@@ -3,14 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React from "react";
+import React, { useState } from "react";
 import { 
   ClipboardList, Cpu, BarChart3, Info, 
   Dribbble, Award, Sparkles, CheckSquare, 
   UserCheck, ShieldCheck, Mail, ArrowRight, Activity, HelpCircle
 } from "lucide-react";
 
-export default function InfoSections() {
+interface InfoSectionsProps {
+  onStartSimulation?: () => void;
+}
+
+export default function InfoSections({ onStartSimulation }: InfoSectionsProps) {
+  const [previewOption, setPreviewOption] = useState<"a" | "b" | "c">("a");
+
+  const previewMetrics = {
+    a: {
+      score: 81,
+      badge: "Good",
+      badgeStyle: "bg-cyan-500/10 border-cyan-500/30 text-cyan-300 shadow-[0_0_8px_rgba(6,182,212,0.25)]",
+      description: "Calculated alertness index is stable but requires active audio compensation.",
+      strokeOffset: Math.round((1 - 0.81) * 276),
+      sparkline: "M0,15 L10,12 L20,18 L30,5 L40,8 L50,14 L60,10 L70,3 L80,12 L90,14 L100,6",
+      stability: "STABLE // 81%"
+    },
+    b: {
+      score: 58,
+      badge: "At Risk",
+      badgeStyle: "bg-red-500/10 border-red-500/30 text-red-400 shadow-[0_0_8px_rgba(239,68,68,0.25)]",
+      description: "Calculated fatigue and aggressive coping mechanisms suggest elevated risk profiles.",
+      strokeOffset: Math.round((1 - 0.58) * 276),
+      sparkline: "M0,15 L10,17 L20,19 L30,12 L40,16 L50,18 L60,14 L70,19 L80,18 L90,20 L100,16",
+      stability: "UNSTABLE // 58%"
+    },
+    c: {
+      score: 94,
+      badge: "Optimal",
+      badgeStyle: "bg-emerald-500/10 border-emerald-500/30 text-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.25)]",
+      description: "Proactive rest patterns maintain highest attention buffers. High safety index.",
+      strokeOffset: Math.round((1 - 0.94) * 276),
+      sparkline: "M0,10 L10,8 L20,9 L30,6 L40,7 L50,5 L60,6 L70,4 L80,5 L90,4 L100,5",
+      stability: "OPTIMAL // 94%"
+    }
+  };
+
+  const currentMetrics = previewMetrics[previewOption];
   return (
     <div className="bg-pearl space-y-24 py-16">
       
@@ -259,24 +296,68 @@ export default function InfoSections() {
 
               {/* Multiple Choice Options */}
               <div className="space-y-3">
-                <div className="flex items-center gap-3 p-3.5 border border-[#20314d] rounded-xl bg-[#09101c]/50">
-                  <div className="h-5 w-5 rounded-full border-2 border-slate-600 flex items-center justify-center shrink-0">
-                    <div className="h-2.5 w-2.5 rounded-full bg-transparent" />
+                <button
+                  onClick={() => setPreviewOption("a")}
+                  className={`w-full flex items-center gap-3 p-3.5 border rounded-xl transition-all text-left cursor-pointer focus:outline-none ${
+                    previewOption === "a"
+                      ? "border-cyan-400 bg-cyan-950/30 text-white font-semibold"
+                      : "border-[#20314d] bg-[#09101c]/50 hover:border-cyan-400/50 text-slate-200"
+                  }`}
+                  id="preview-option-a"
+                >
+                  <div className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 ${
+                    previewOption === "a" ? "border-cyan-400 bg-cyan-400 text-white" : "border-slate-600 bg-slate-800/80"
+                  }`}>
+                    {previewOption === "a" && (
+                      <svg className="h-3.5 w-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                      </svg>
+                    )}
                   </div>
-                  <span className="text-xs font-medium text-slate-200 font-sans">I rely heavily on radio/audio stimulation to force focus (Active Compensation).</span>
-                </div>
-                <div className="flex items-center gap-3 p-3.5 border border-cyan-400 rounded-xl bg-cyan-950/30">
-                  <div className="h-5 w-5 rounded-full border-2 border-cyan-400 flex items-center justify-center shrink-0">
-                    <div className="h-2.5 w-2.5 rounded-full bg-cyan-400" />
+                  <span className="text-xs font-sans">I rely heavily on radio/audio stimulation to force focus (Active Compensation).</span>
+                </button>
+
+                <button
+                  onClick={() => setPreviewOption("b")}
+                  className={`w-full flex items-center gap-3 p-3.5 border rounded-xl transition-all text-left cursor-pointer focus:outline-none ${
+                    previewOption === "b"
+                      ? "border-cyan-400 bg-cyan-950/30 text-white font-semibold"
+                      : "border-[#20314d] bg-[#09101c]/50 hover:border-cyan-400/50 text-slate-200"
+                  }`}
+                  id="preview-option-b"
+                >
+                  <div className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 ${
+                    previewOption === "b" ? "border-cyan-400 bg-cyan-400 text-white" : "border-slate-600 bg-slate-800/80"
+                  }`}>
+                    {previewOption === "b" && (
+                      <svg className="h-3.5 w-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                      </svg>
+                    )}
                   </div>
-                  <span className="text-xs font-semibold text-white font-sans">I attempt to accelerate slightly to heighten adrenaline (Aggressive Risk).</span>
-                </div>
-                <div className="flex items-center gap-3 p-3.5 border border-[#20314d] rounded-xl bg-[#09101c]/50">
-                  <div className="h-5 w-5 rounded-full border-2 border-slate-600 flex items-center justify-center shrink-0">
-                    <div className="h-2.5 w-2.5 rounded-full bg-transparent" />
+                  <span className="text-xs font-sans">I attempt to accelerate slightly to heighten adrenaline (Aggressive Risk).</span>
+                </button>
+
+                <button
+                  onClick={() => setPreviewOption("c")}
+                  className={`w-full flex items-center gap-3 p-3.5 border rounded-xl transition-all text-left cursor-pointer focus:outline-none ${
+                    previewOption === "c"
+                      ? "border-cyan-400 bg-cyan-950/30 text-white font-semibold"
+                      : "border-[#20314d] bg-[#09101c]/50 hover:border-cyan-400/50 text-slate-200"
+                  }`}
+                  id="preview-option-c"
+                >
+                  <div className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 ${
+                    previewOption === "c" ? "border-cyan-400 bg-cyan-400 text-white" : "border-slate-600 bg-slate-800/80"
+                  }`}>
+                    {previewOption === "c" && (
+                      <svg className="h-3.5 w-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                      </svg>
+                    )}
                   </div>
-                  <span className="text-xs font-medium text-slate-200 font-sans">I seek a designated rest stop or pull over immediately (Safe Baseline).</span>
-                </div>
+                  <span className="text-xs font-sans">I seek a designated rest stop or pull over immediately (Safe Baseline).</span>
+                </button>
               </div>
             </div>
 
@@ -303,7 +384,7 @@ export default function InfoSections() {
               <div className="flex flex-col items-center py-4">
                 <div className="relative h-32 w-32 rounded-full flex items-center justify-center mb-4">
                   {/* Background Soft Glow */}
-                  <div className="absolute inset-2 rounded-full bg-cyan-500/10 blur-md" />
+                  <div className="absolute inset-2 rounded-full bg-cyan-500/10 blur-md pointer-events-none" />
                   
                   <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
                     <circle cx="50" cy="50" r="44" stroke="#0e172a" strokeWidth="6" fill="transparent" />
@@ -315,24 +396,26 @@ export default function InfoSections() {
                       stroke="#06b6d4" 
                       strokeWidth="5.5" 
                       strokeDasharray="276" 
-                      strokeDashoffset="52" /* (1 - 0.81) * 276 */
+                      strokeDashoffset={currentMetrics.strokeOffset}
                       strokeLinecap="round" 
                       fill="transparent" 
-                      className="drop-shadow-[0_0_6px_rgba(6,182,212,0.6)]"
+                      className="drop-shadow-[0_0_6px_rgba(6,182,212,0.6)] transition-all duration-500"
                     />
                   </svg>
                   
                   <div className="text-center z-10">
-                    <span className="block font-serif text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-50 to-cyan-100 drop-shadow-[0_2px_10px_rgba(6,182,212,0.5)] leading-none">81</span>
-                    <span className="inline-block px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[8px] font-extrabold uppercase tracking-widest mt-1.5 shadow-[0_0_8px_rgba(16,185,129,0.25)]">
-                      Good
+                    <span className="block font-serif text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-50 to-cyan-100 drop-shadow-[0_2px_10px_rgba(6,182,212,0.5)] leading-none transition-all duration-500">
+                      {currentMetrics.score}
+                    </span>
+                    <span className={`inline-block px-2 py-0.5 rounded-full border text-[8px] font-extrabold uppercase tracking-widest mt-1.5 backdrop-blur-sm transition-all duration-500 ${currentMetrics.badgeStyle}`}>
+                      {currentMetrics.badge}
                     </span>
                   </div>
                 </div>
                 
                 <h4 className="font-serif text-base font-bold text-white tracking-wide">Driver Awareness Profile</h4>
-                <p className="text-[10.5px] text-slate-300 font-sans text-center mt-2 max-w-xs leading-relaxed">
-                  Calculated using custom on-device algorithms simulating regional fatigue risk and temporal focus indexes.
+                <p className="text-[10.5px] text-slate-300 font-sans text-center mt-2 max-w-xs leading-relaxed h-12 transition-all duration-500">
+                  {currentMetrics.description}
                 </p>
               </div>
 
@@ -340,12 +423,12 @@ export default function InfoSections() {
               <div className="bg-slate-950/40 backdrop-blur-md border border-white/[0.06] rounded-xl p-4 mb-4">
                 <div className="flex items-center justify-between mb-2 text-[9px] font-mono tracking-wider text-slate-400">
                   <span>COGNITIVE STABILITY GRAPH</span>
-                  <span className="text-cyanaccent font-bold">STABLE // 81%</span>
+                  <span className="text-cyanaccent font-bold uppercase transition-all duration-500">{currentMetrics.stability}</span>
                 </div>
                 {/* Simulated Sparkline Graph with SVG */}
                 <svg className="w-full h-8 stroke-cyanaccent fill-none" viewBox="0 0 100 20">
-                  <path d="M0,15 L10,12 L20,18 L30,5 L40,8 L50,14 L60,10 L70,3 L80,12 L90,14 L100,6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M0,15 L10,12 L20,18 L30,5 L40,8 L50,14 L60,10 L70,3 L80,12 L90,14 L100,6" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="opacity-30 blur-[2px]" />
+                  <path d={currentMetrics.sparkline} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="transition-all duration-500" />
+                  <path d={currentMetrics.sparkline} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="opacity-30 blur-[2px] transition-all duration-500" />
                 </svg>
               </div>
 
@@ -365,13 +448,11 @@ export default function InfoSections() {
             <div className="mt-6 pt-4 border-t border-white/[0.06] text-center relative z-10">
               <button 
                 onClick={() => {
-                  const el = document.getElementById("hero");
-                  if (el) {
-                    el.scrollIntoView({ behavior: "smooth" });
-                    setTimeout(() => {
-                      const cta = document.getElementById("hero-cta-btn");
-                      if (cta) cta.click();
-                    }, 800);
+                  if (onStartSimulation) {
+                    onStartSimulation();
+                  } else {
+                    const el = document.getElementById("live-simulation");
+                    if (el) el.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
                 className="w-full bg-cyanaccent hover:bg-cyanaccent/90 text-white font-bold text-xs py-3 rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-[0_4px_12px_rgba(14,124,158,0.25)] hover:shadow-[0_4px_20px_rgba(14,124,158,0.4)] hover:-translate-y-0.5"

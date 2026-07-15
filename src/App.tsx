@@ -52,7 +52,7 @@ export default function App() {
       <Hero onStartSimulation={handleScrollToSimulation} />
 
       {/* 3, 4, 5, 6. Info Sections (What simulation does, What you'll receive, How it works, Validation themes) */}
-      <InfoSections />
+      <InfoSections onStartSimulation={handleScrollToSimulation} />
 
       {/* 7. Live simulation — functional multi-question flow & results (score 81) & Research Cohort signup form & native referral system */}
       <SimulationFlow />
