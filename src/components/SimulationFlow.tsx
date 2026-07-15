@@ -480,11 +480,11 @@ export default function SimulationFlow() {
                 </div>
 
                 {/* OPT-IN SECTION: Join Research Cohort */}
-                <div className="border-t border-deepnavy/10 pt-8 space-y-6">
-                  <div className="text-center md:text-left space-y-1">
-                    <h4 className="font-serif text-xl text-deepnavy font-bold">Join our Pre-Launch Canadian Research Cohort</h4>
-                    <p className="text-sm text-deepnavy/70 font-sans">
-                      Participate in future software tests, priority feedback rounds, and validate local driver privacy completely free of charge.
+                <div className="border-t border-deepnavy/10 pt-8 space-y-6" id="research-cohort-enrollment">
+                  <div className="text-center md:text-left space-y-2">
+                    <h4 className="font-serif text-2xl text-deepnavy font-black tracking-tight" id="cohort-header">Join the Active Research Cohort</h4>
+                    <p className="text-sm text-deepnavy/80 font-sans leading-relaxed" id="cohort-sub-text">
+                      Submit your email to receive the aggregated cohort findings, participate in upcoming software simulation iterations, and help shape a privacy-first alternative to commercial cabin tracking.
                     </p>
                   </div>
 
@@ -513,7 +513,7 @@ export default function SimulationFlow() {
                       className="bg-cyanaccent hover:bg-cyanaccent/90 text-white font-bold text-sm px-6 py-3 rounded-xl shadow-md transition-all whitespace-nowrap cursor-pointer flex items-center justify-center gap-1.5"
                       id="cohort-join-submit-btn"
                     >
-                      Join Research Cohort
+                      Register as Cohort Participant
                     </button>
                   </form>
 

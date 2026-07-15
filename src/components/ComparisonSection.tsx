@@ -57,61 +57,114 @@ export default function ComparisonSection() {
         </div>
       </section>
 
-      {/* ---------------- SECTION 9: Different approaches to improving driver awareness ---------------- */}
-      <section className="max-w-7xl mx-auto px-6 border-t border-deepnavy/10 pt-24" id="approaches">
+      {/* ---------------- SECTION 10: Philosophical Comparison ---------------- */}
+      <section className="max-w-7xl mx-auto px-6 border-t border-deepnavy/10 pt-24" id="philosophy-comparison">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="font-mono text-xs text-cyanaccent uppercase tracking-widest font-bold">
-            Philosophy comparison
+          <span className="font-mono text-xs text-cyanaccent uppercase tracking-widest font-black block mb-2" id="philosophy-tag">
+            Design Philosophy
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl text-deepnavy font-bold mt-2">
-            Different approaches to improving driver awareness
+          <h2 className="font-serif text-3xl md:text-4xl text-deepnavy font-bold mt-2 tracking-tight" id="philosophy-heading">
+            Contrasting Driver Awareness Philosophies
           </h2>
-          <p className="text-deepnavy/70 mt-3 font-sans">
-            How does our conceptual edge-based software model contrast with general alternative categories of driver attention tracking?
+          <p className="text-base text-deepnavy/70 mt-4 leading-relaxed font-sans max-w-2xl mx-auto" id="philosophy-desc">
+            How does our exploratory validation concept differ from conventional market models? We comparison-test the fundamental design pillars of our architecture against legacy industry approaches.
           </p>
         </div>
 
-        {/* Comparison Table / Cards for desktop & mobile */}
-        <div className="overflow-x-auto border border-deepnavy/10 rounded-2xl bg-white shadow-sm" id="approaches-table-wrapper">
-          <table className="w-full text-left border-collapse min-w-[700px]">
-            <thead>
-              <tr className="bg-deepnavy/5 border-b border-deepnavy/10">
-                <th className="p-4 text-xs font-mono text-deepnavy uppercase tracking-wider font-bold">Approach</th>
-                <th className="p-4 text-xs font-mono text-deepnavy uppercase tracking-wider font-bold">Data Transmission</th>
-                <th className="p-4 text-xs font-mono text-deepnavy uppercase tracking-wider font-bold">Hardware Requirement</th>
-                <th className="p-4 text-xs font-mono text-deepnavy uppercase tracking-wider font-bold">Privacy Standing</th>
-                <th className="p-4 text-xs font-mono text-deepnavy uppercase tracking-wider font-bold">Insurance Security</th>
-              </tr>
-            </thead>
-            <tbody>
-              {APPROACHES.map((approach, index) => (
-                <tr 
-                  key={index}
-                  className={`border-b border-deepnavy/5 last:border-0 transition-colors ${
-                    approach.astrateq 
-                      ? "bg-cyanaccent/5 hover:bg-cyanaccent/10 font-medium" 
-                      : "hover:bg-deepnavy/5"
-                  }`}
-                  id={`approach-row-${index}`}
-                >
-                  <td className="p-4 flex items-center gap-2">
-                    {approach.astrateq && <ShieldCheck className="h-4 w-4 text-cyanaccent shrink-0" />}
-                    <span className={`text-sm ${approach.astrateq ? "font-bold text-cyanaccent" : "text-deepnavy font-semibold"}`}>
-                      {approach.name}
-                    </span>
-                  </td>
-                  <td className="p-4 text-xs text-deepnavy/80 font-sans">{approach.dataTransmission}</td>
-                  <td className="p-4 text-xs text-deepnavy/80 font-sans">{approach.hardware}</td>
-                  <td className="p-4 text-xs text-deepnavy/80 font-sans">{approach.privacy}</td>
-                  <td className="p-4 text-xs text-deepnavy/80 font-sans">{approach.insurance}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch" id="philosophy-columns-container">
+          {/* Left Column: Traditional Approach */}
+          <div className="bg-white border border-red-500/10 rounded-2xl p-8 hover:border-red-500/20 transition-all shadow-sm flex flex-col justify-between" id="traditional-philosophy-card">
+            <div>
+              <div className="flex items-center gap-2 pb-4 border-b border-deepnavy/15 mb-6">
+                <span className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
+                <h3 className="font-serif text-xl font-black text-deepnavy">Traditional Approach</h3>
+              </div>
+              
+              <ul className="space-y-5 font-sans text-sm">
+                <li className="flex gap-3 items-start">
+                  <div className="h-5 w-5 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✕</div>
+                  <div>
+                    <strong className="text-deepnavy block font-black">Continuous tracking</strong>
+                    <span className="text-deepnavy/70 text-xs">Constant stream of visual monitoring, sensor logs, and location metrics.</span>
+                  </div>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="h-5 w-5 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✕</div>
+                  <div>
+                    <strong className="text-deepnavy block font-black">Cloud-dependent storage</strong>
+                    <span className="text-deepnavy/70 text-xs">Biometric face, eye, and route telemetry continuously synchronized to central cloud nodes.</span>
+                  </div>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="h-5 w-5 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✕</div>
+                  <div>
+                    <strong className="text-deepnavy block font-black">Third-party data monetization</strong>
+                    <span className="text-deepnavy/70 text-xs">Integration of behavioral patterns into commercial telemetry and profiling systems.</span>
+                  </div>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="h-5 w-5 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✕</div>
+                  <div>
+                    <strong className="text-deepnavy block font-black">Hardware-locked requirements</strong>
+                    <span className="text-deepnavy/70 text-xs">Mandatory hardware integration with proprietary cabin cameras and vehicle ports.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="mt-8 pt-4 border-t border-deepnavy/5 text-xs text-deepnavy/40 font-mono">
+              PARADIGM: CENTRALIZED TRACKING
+            </div>
+          </div>
+
+          {/* Right Column: Astrateq Concept */}
+          <div className="bg-cyanaccent/5 border border-cyanaccent/30 rounded-2xl p-8 hover:border-cyanaccent/50 transition-all shadow-sm flex flex-col justify-between" id="astrateq-philosophy-card">
+            <div>
+              <div className="flex items-center gap-2 pb-4 border-b border-cyanaccent/20 mb-6">
+                <span className="h-2 w-2 rounded-full bg-cyanaccent animate-pulse" />
+                <h3 className="font-serif text-xl font-black text-deepnavy">Astrateq Concept</h3>
+              </div>
+
+              <ul className="space-y-5 font-sans text-sm">
+                <li className="flex gap-3 items-start">
+                  <div className="h-5 w-5 rounded-full bg-cyanaccent/15 text-cyanaccent flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</div>
+                  <div>
+                    <strong className="text-deepnavy block font-black">User-controlled simulation</strong>
+                    <span className="text-deepnavy/70 text-xs">Subjective, voluntary inputs that generate localized behavioral metrics on-demand.</span>
+                  </div>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="h-5 w-5 rounded-full bg-cyanaccent/15 text-cyanaccent flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</div>
+                  <div>
+                    <strong className="text-deepnavy block font-black">100% Offline processing</strong>
+                    <span className="text-deepnavy/70 text-xs">Complete computational sandboxing. No data leaves the user's mobile environment.</span>
+                  </div>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="h-5 w-5 rounded-full bg-cyanaccent/15 text-cyanaccent flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</div>
+                  <div>
+                    <strong className="text-deepnavy block font-black">Zero-knowledge data design</strong>
+                    <span className="text-deepnavy/70 text-xs">Absolute decoupling of driving logs from central databases, insurance companies, and advertisers.</span>
+                  </div>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <div className="h-5 w-5 rounded-full bg-cyanaccent/15 text-cyanaccent flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</div>
+                  <div>
+                    <strong className="text-deepnavy block font-black">Software-first validation model</strong>
+                    <span className="text-deepnavy/70 text-xs">Designed entirely around standard smartphone hardware to bypass expensive visual accessories.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-8 pt-4 border-t border-cyanaccent/10 text-xs text-cyanaccent font-mono">
+              PARADIGM: SOVEREIGN EDGE MODEL
+            </div>
+          </div>
         </div>
 
-        <p className="text-center text-xs text-deepnavy/50 font-sans mt-4 italic">
-          *Alternative approaches represent generalized categories. Astrateq Gadgets represents an exploratory software concept currently undergoing market research.
+        <p className="text-center text-xs text-deepnavy/50 font-sans mt-8 italic">
+          *Astrateq represents a speculative pre-launch validation concept being evaluated for feasibility. This comparison is for research purposes only.
         </p>
       </section>
 

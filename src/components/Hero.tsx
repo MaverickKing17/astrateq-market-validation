@@ -31,7 +31,13 @@ export default function Hero({ onStartSimulation }: HeroProps) {
             Check your Driver Awareness Readiness in <span className="text-cyanaccent">60 seconds.</span>
           </h1>
 
-          <p className="text-lg text-deepnavy/80 leading-relaxed max-w-2xl font-sans">
+          <div className="bg-cyanaccent/5 border-l-4 border-cyanaccent px-6 py-4 rounded-r-xl max-w-2xl" id="hero-clarifying-subtitle">
+            <p className="text-sm md:text-base font-semibold text-deepnavy/90 leading-relaxed font-sans">
+              This is a market validation initiative. We are exploring whether Canadian drivers see value in a privacy-first driver awareness platform before investing in physical hardware or product development.
+            </p>
+          </div>
+
+          <p className="text-base md:text-lg text-deepnavy/80 leading-relaxed max-w-2xl font-sans">
             This simulation explores a privacy-first approach to understanding driver awareness in Canada. 
             No tracking. No hardware. No insurance scoring. No vehicle connection. 
             Complete a short, 60-second exploratory assessment to see your simulated score and potential eligibility to join our national cohort.
@@ -43,8 +49,7 @@ export default function Hero({ onStartSimulation }: HeroProps) {
               className="group relative flex items-center justify-center gap-2 bg-cyanaccent hover:bg-cyanaccent/90 text-white font-medium text-base px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
               id="hero-cta-btn"
             >
-              Start Driver Awareness Simulation
-              <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              Start Driver Awareness Simulation →
             </button>
             <button
               onClick={() => {

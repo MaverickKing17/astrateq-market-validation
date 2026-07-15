@@ -19,15 +19,17 @@ body {
 
 /* Custom scrollbar for better visual integration with the brand */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
+  height: 10px;
 }
 ::-webkit-scrollbar-track {
   background: var(--color-pearl);
 }
 ::-webkit-scrollbar-thumb {
-  background: #d1cfc9;
-  border-radius: 4px;
+  background: #0ea5e9;
+  border-radius: 9999px;
+  border: 2px solid var(--color-pearl);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-cyanaccent);
+  background: #0284c7;
 }
